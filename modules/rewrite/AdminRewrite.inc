@@ -240,7 +240,7 @@ class AdminRewriteView extends GalleryView {
 	    $activeRules = unserialize($activeRules);
 
 	    /* Get all modules to walk through and get any rules it provieds */
-	    list ($ret, $modules) = GalleryCoreAPi::fetchPluginStatus('module');
+	    list ($ret, $modules) = GalleryCoreApi::fetchPluginStatus('module');
 	    if ($ret) {
 		return array($ret, null);
 	    }

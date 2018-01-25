@@ -373,7 +373,7 @@
 	* All error messages go through this bottleneck function.
 	* You can define your own handler by defining the function name in ADODB_OUTP.
 	*/
-	function outp($msg,$newline=true)
+	static function outp($msg,$newline=true)
 	{
 	global $ADODB_FLUSH,$ADODB_OUTP;
 	
@@ -782,7 +782,7 @@
 		} else {
 			$this->_transOK = false;
 			$this->RollbackTrans();
-			if ($this->debug) ADOCOnnection::outp("Smart Rollback occurred");
+			if ($this->debug) ADOConnection::outp("Smart Rollback occurred");
 		}
 		
 		return $this->_transOK;

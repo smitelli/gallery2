@@ -115,7 +115,7 @@ class GalleryThemeHelper_medium {
     /**
      * @see GalleryCoreApi::loadAvailableBlocks
      */
-    function loadAvailableBlocks($getInactive=false) {
+    static function loadAvailableBlocks($getInactive=false) {
 	global $gallery;
 	$platform =& $gallery->getPlatform();
 

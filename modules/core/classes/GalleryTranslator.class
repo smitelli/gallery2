@@ -407,7 +407,7 @@ class GalleryTranslator {
      *                array data about this language code (description,right-to-left?))
      * @static
      */
-    function getSupportedLanguageCode($languageCode, $fallback=true) {
+    static function getSupportedLanguageCode($languageCode, $fallback=true) {
 	static $supportedLanguages;
 	static $defaultCountry;
 	if (!isset($supportedLanguages)) {

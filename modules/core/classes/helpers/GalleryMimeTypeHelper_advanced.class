@@ -35,7 +35,7 @@ class GalleryMimeTypeHelper_advanced {
      * Initialize mime types and store them in the database
      * @return GalleryStatus a status code
      */
-    function initializeMimeTypes() {
+    static function initializeMimeTypes() {
 	$mimeTypes = array(
 	    /* This data was lifted from Apache's mime.types listing. */
 	    'z' => 'application/x-compress',

@@ -127,14 +127,14 @@ class GalleryPermissionHelper_simple {
      * Clear all cached access list ids
      * @access private
      */
-    function _clearCachedAccessListIds() {
+    static function _clearCachedAccessListIds() {
 	GalleryDataCache::removeByPattern("GalleryPermissionHelper::fetchAccessListIds");
     }
 
     /**
      * @see GalleryCoreApi::convertPermissionIdsToBits
      */
-    function convertIdsToBits($permissionIds) {
+    static function convertIdsToBits($permissionIds) {
 	global $gallery;
 	if (!is_array($permissionIds)) {
 	    $permissionIds = array($permissionIds);
@@ -170,7 +170,7 @@ class GalleryPermissionHelper_simple {
      *                      ...)
      * @access protected
      */
-    function _fetchAllPermissions() {
+    static function _fetchAllPermissions() {
 	global $gallery;
 
 	$cacheKey = 'GalleryPermissionHelper::_allPermissions';

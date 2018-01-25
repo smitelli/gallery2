@@ -292,7 +292,7 @@ class GalleryToolkitHelper_medium {
     /**
      * @see GalleryCoreApi::unregisterToolkitsByModuleId
      */
-    function unregisterToolkitsByModuleId($moduleId) {
+    static function unregisterToolkitsByModuleId($moduleId) {
 	list ($ret, $searchResults) = GalleryCoreApi::getMapEntry('GalleryFactoryMap',
 	    array('implId'), array('implModuleId' => $moduleId));
 	if ($ret) {

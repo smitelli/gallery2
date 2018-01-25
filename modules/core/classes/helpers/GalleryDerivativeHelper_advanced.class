@@ -453,7 +453,7 @@ class GalleryDerivativeHelper_advanced {
     /**
      * @see GalleryCoreApi::addDerivativePreference
      */
-    function addPreference($order, $itemId, $derivativeType, $derivativeOperations) {
+    static function addPreference($order, $itemId, $derivativeType, $derivativeOperations) {
 	if (is_array($itemId)) {
 	    /* Allow for adding same set of preferences to multiple items */
 	    $order = array_fill(0, count($itemId), $order);

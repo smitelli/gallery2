@@ -168,7 +168,7 @@ class GalleryItemAttributesHelper_advanced {
     /**
      * @see GalleryCoreApi::createItemAttributes
      */
-    function createItemAttributes($itemId, $parentSequence) {
+    static function createItemAttributes($itemId, $parentSequence) {
 	if (empty($parentSequence)) {
 	    $parentSequence = '';
 	} else {

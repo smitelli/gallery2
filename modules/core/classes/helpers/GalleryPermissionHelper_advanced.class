@@ -33,7 +33,7 @@ class GalleryPermissionHelper_advanced {
     /**
      * @see GalleryCoreApi::addUserPermission
      */
-    function addUserPermission($itemId, $userId, $permission, $applyToChildren=false) {
+    static function addUserPermission($itemId, $userId, $permission, $applyToChildren=false) {
 	$ret = GalleryPermissionHelper_advanced::_changePermission(
 	    'add', $itemId, $userId, $permission, $applyToChildren);
 	if ($ret) {
@@ -55,7 +55,7 @@ class GalleryPermissionHelper_advanced {
     /**
      * @see GalleryCoreApi::addGroupPermission
      */
-    function addGroupPermission($itemId, $groupId, $permission, $applyToChildren=false) {
+    static function addGroupPermission($itemId, $groupId, $permission, $applyToChildren=false) {
 	$ret = GalleryPermissionHelper_advanced::_changePermission(
 	    'add', $itemId, $groupId, $permission, $applyToChildren);
 	if ($ret) {
@@ -82,7 +82,7 @@ class GalleryPermissionHelper_advanced {
      * @return GalleryStatus a status code
      * @access private
      */
-    function _postGroupEvent($groupId, $itemId, $permission, $applyToChildren, $changeType) {
+    static function _postGroupEvent($groupId, $itemId, $permission, $applyToChildren, $changeType) {
 	$userId = null;
 	list ($ret, $group) = GalleryCoreApi::loadEntitiesById($groupId, 'GalleryGroup');
 	if ($ret) {
@@ -190,7 +190,7 @@ class GalleryPermissionHelper_advanced {
      * @return GalleryStatus a status code
      * @access private
      */
-    function _changePermission($changeType, $itemId, $entityId,
+    static function _changePermission($changeType, $itemId, $entityId,
 			       $permission, $applyToChildren, $removeEventIds=null) {
 	global $gallery;
 	if (empty($itemId) || empty($entityId) || empty($permission) ||
@@ -550,7 +550,7 @@ class GalleryPermissionHelper_advanced {
      *               int permissions or null if not found
      * @access private
      */
-    function _fetchPermissionBitsForItem($itemId, $userOrGroupId) {
+    static function _fetchPermissionBitsForItem($itemId, $userOrGroupId) {
 	global $gallery;
 
 	if (empty($itemId) || empty($userOrGroupId)) {
@@ -612,7 +612,7 @@ class GalleryPermissionHelper_advanced {
      *               int AccessListId the new access list's id
      * @access private
      */
-    function _copyAccessList($oldAccessListId) {
+    static function _copyAccessList($oldAccessListId) {
 	global $gallery;
 
 	$storage =& $gallery->getStorage();
@@ -742,7 +742,7 @@ class GalleryPermissionHelper_advanced {
     /**
      * @see GalleryCoreApi::registerPermission
      */
-    function registerPermission($module, $permissionId, $description,
+    static function registerPermission($module, $permissionId, $description,
 				$flags=0, $composites=array()) {
 	global $gallery;
 
@@ -888,7 +888,7 @@ class GalleryPermissionHelper_advanced {
      *               int location of a bit (1, 2, 3, etc)
      * @access private
      */
-    function _newPermissionBit() {
+    static function _newPermissionBit() {
 	list ($ret, $allPermissions) = GalleryPermissionHelper_simple::_fetchAllPermissions();
 	if ($ret) {
 	    return array($ret, null);
@@ -937,7 +937,7 @@ class GalleryPermissionHelper_advanced {
      * @return GalleryStatus a status code
      * @access private
      */
-    function _setPermission($data) {
+    static function _setPermission($data) {
 	$cacheKey = 'GalleryPermissionHelper::_allPermissions';
 	if (GalleryDataCache::containsKey($cacheKey)) {
 	    $permissions = GalleryDataCache::get($cacheKey);
@@ -1027,7 +1027,7 @@ class GalleryPermissionHelper_advanced {
      *         int lock id
      * @access private
      */
-    function _getAccessListCompacterLock($type) {
+    static function _getAccessListCompacterLock($type) {
 	list ($ret, $semaphoreId) =
 	    GalleryCoreApi::getPluginParameter('module', 'core', 'id.accessListCompacterLock');
 	if ($ret) {

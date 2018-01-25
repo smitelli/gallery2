@@ -51,7 +51,8 @@ class GalleryEvent {
 
     function GalleryEvent() {
 	$this->setEventName(null);
-	$this->setEntity($null=null);
+	$null = null;
+	$this->setEntity($null);
 	$this->setData(null);
     }
 

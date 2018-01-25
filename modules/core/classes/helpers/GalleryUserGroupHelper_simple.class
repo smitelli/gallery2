@@ -54,7 +54,7 @@ class GalleryUserGroupHelper_simple {
     /**
      * @see GalleryCoreApi::isUserInGroup
      */
-    function isUserInGroup($userId, $groupId) {
+    static function isUserInGroup($userId, $groupId) {
 	$userId = (int) $userId;
 	$groupId = (int) $groupId;
 

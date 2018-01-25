@@ -460,7 +460,7 @@ class IsapiRewriteHelper {
 	$fetch = $urlGenerator->generateUrl(
 	    array('href' => 'modules/rewrite/data/isapi_rewrite/Rewrite.txt'),
 	    array('forceFullUrl' => true));
-	list ($success, $body) = GalleryCoreAPI::fetchWebPage($fetch);
+	list ($success, $body) = GalleryCoreApi::fetchWebPage($fetch);
 
 	if ($success && $body == 'PASS_ISAPI_REWRITE') {
 	    return array(null, REWRITE_STATUS_OK, REWRITE_STATUS_OK);

@@ -480,7 +480,7 @@ class ModRewriteHelper {
 	}
 
 	$fetch = $baseUrl . "mod_rewrite_no_options/$target/Rewrite.txt";
-	list ($success, $body) = GalleryCoreAPI::fetchWebPage($fetch);
+	list ($success, $body) = GalleryCoreApi::fetchWebPage($fetch);
 
 	if ($success && !strncmp('PASS_REWRITE', $body, 12)) {
 	    $ret = GalleryCoreApi::setPluginParameter('module', 'rewrite', 'modrewrite.status',
@@ -497,7 +497,7 @@ class ModRewriteHelper {
 	 * the .htaccess file.
 	 */
 	$fetch = $baseUrl . "mod_rewrite/$target/Rewrite.txt";
-	list ($success, $body) = GalleryCoreAPI::fetchWebPage($fetch);
+	list ($success, $body) = GalleryCoreApi::fetchWebPage($fetch);
 
 	if ($success && !strncmp('PASS_REWRITE', $body, 12)) {
 	    $ret = GalleryCoreApi::setPluginParameter(
