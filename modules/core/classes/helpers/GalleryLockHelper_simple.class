@@ -164,7 +164,7 @@ class GalleryLockHelper_simple {
      * @see GalleryCoreApi::acquireWriteLock
      * @see GalleryLockSystem::acquireWriteLock
      */
-    function acquireWriteLock($ids, $timeout=10) {
+    static function acquireWriteLock($ids, $timeout=10) {
 	global $gallery;
 	$result =& $gallery->getLockSystem();
 	$ret = $result[0];

@@ -724,7 +724,7 @@ class GalleryDataCache {
      * @param mixed $itemIds one item id, or an array of item ids
      * @return GalleryStatus a status code
      */
-    function removePageData($itemIds) {
+    static function removePageData($itemIds) {
 	$ret = GalleryCoreApi::removeMapEntry('GalleryCacheMap', array('itemId' => $itemIds));
 	if ($ret) {
 	    return $ret;

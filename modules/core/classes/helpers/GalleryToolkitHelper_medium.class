@@ -35,7 +35,7 @@ class GalleryToolkitHelper_medium {
     /**
      * @see GalleryCoreApi::registerToolkitOperation
      */
-    function registerOperation($toolkitId, $mimeTypes, $operationName,
+    static function registerOperation($toolkitId, $mimeTypes, $operationName,
 			       $parameterTypesArray, $description,
 			       $outputMimeType='', $priority=5) {
 	global $gallery;
@@ -130,7 +130,7 @@ class GalleryToolkitHelper_medium {
     /**
      * @see GalleryCoreApi::registerToolkitProperty
      */
-    function registerProperty($toolkitId, $mimeTypes, $propertyName, $type, $description) {
+    static function registerProperty($toolkitId, $mimeTypes, $propertyName, $type, $description) {
 	global $gallery;
 
 	/* Check to see if the property name exists, but with a different unique id. */
@@ -423,7 +423,7 @@ class GalleryToolkitHelper_medium {
     /**
      * @see GalleryCoreApi::getToolkitOperationMimeTypes
      */
-    function getOperationMimeTypes($operationName) {
+    static function getOperationMimeTypes($operationName) {
 	global $gallery;
 
 	$cacheKey = "GalleryToolkitHelper::getOperationMimeTypes($operationName)";

@@ -230,7 +230,7 @@ class GdToolkitHelper {
      *         string the GD version number or '0' if there is no GD support
      *                Prefixed with '>' if PHP says "or higher"
      */
-    function discoverGdVersion($gd=null) {
+    static function discoverGdVersion($gd=null) {
 	/*
 	 * Caching this result breaks our unit tests, which checks against a variety of
 	 * dummy GdFunctionality instances.
@@ -272,7 +272,7 @@ class GdToolkitHelper {
      * @return array GalleryStatus
      *	       boolean true if supported, false otherwise
      */
-    function isGdVersionSupported($gdVersion=null, $gd=null) {
+    static function isGdVersionSupported($gdVersion=null, $gd=null) {
 	if (!isset($gdVersion)) {
 	    /* Find out current GD version */
 	    if (!isset($gd)) {
@@ -381,7 +381,7 @@ class GdToolkitHelper {
      * Factory to get a new GdFunctionality object.
      * @return GdFunctionality
      */
-    function &getGdFunctionality() {
+    static function &getGdFunctionality() {
 	static $gdFunctionality;
 	if (!isset($gdFunctionality)) {
 	    GalleryCoreApi::requireOnce('modules/gd/classes/GdFunctionality.class');

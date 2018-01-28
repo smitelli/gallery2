@@ -214,7 +214,7 @@ class NotificationHelper {
      * @return array GalleryStatus
      *               array An array suitable for use as hints. (i.e. array(gallery event, ...))
      */
-    function getActiveSubscriptionsEvents() {
+    static function getActiveSubscriptionsEvents() {
 	global $gallery;
 
 	$sql = 'SELECT DISTINCT [::notificationName] FROM [SubscriptionMap]';
@@ -328,7 +328,7 @@ class NotificationHelper {
      * @return array GalleryStatus a status code
      *               array Array of eventId => userid array
      */
-    function getSubscriberByEntityId($itemId) {
+    static function getSubscriberByEntityId($itemId) {
 	list ($ret, $searchResult) = GalleryCoreApi::getMapEntry('SubscriptionMap',
 			   array('notificationName', 'userId', 'handlerName'),
 			   array('itemId' => $itemId));

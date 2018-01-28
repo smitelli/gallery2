@@ -173,7 +173,7 @@ class NetPbmToolkitHelper {
      *		     )
      *         array hash map of mime types
      */
-    function testJhead($jheadPath) {
+    static function testJhead($jheadPath) {
 	global $gallery;
 	$platform =& $gallery->getPlatform();
 	/*

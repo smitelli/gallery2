@@ -190,7 +190,7 @@ class ImageMagickToolkitHelper {
      * @return array GalleryStatus
      *               array commands
      */
-    function getCommand($cmd, $imageMagickPath=null) {
+    static function getCommand($cmd, $imageMagickPath=null) {
 	global $gallery;
 	$platform =& $gallery->getPlatform();
 
@@ -335,7 +335,7 @@ class ImageMagickToolkitHelper {
      *		      'message' => string: the error message, in case of
      *				   IMAGEMAGIC_TEST_ERROR)
      */
-    function testBinaries($imageMagickPath) {
+    static function testBinaries($imageMagickPath) {
 	global $gallery;
 	$platform =& $gallery->getPlatform();
 	$slash = $platform->getDirectorySeparator();
@@ -525,7 +525,7 @@ class ImageMagickToolkitHelper {
      * @return array GalleryStatus
      *               string name of the binary
      */
-    function discoverBinary($imageMagickPath=null) {
+    static function discoverBinary($imageMagickPath=null) {
 	global $gallery;
 	$platform =& $gallery->getPlatform();
 

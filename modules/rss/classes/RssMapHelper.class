@@ -102,7 +102,7 @@ class RssMapHelper {
      * @return array GalleryStatus a status code
      *         array of feed names
      */
-    function fetchFeedNames($limit=0) {
+    static function fetchFeedNames($limit=0) {
 	global $gallery;
 
 	$query = '

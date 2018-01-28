@@ -78,7 +78,7 @@ class GalleryUserGroupHelper_simple {
     /**
      * @see GalleryCoreApi::fetchGroupsForUser
      */
-    function fetchGroupsForUser($userId, $count=null, $offset=null) {
+    static function fetchGroupsForUser($userId, $count=null, $offset=null) {
 	global $gallery;
 
 	$cacheKey = "GalleryUserGroupHelper::fetchGroupsForUser($userId,$count,$offset)";

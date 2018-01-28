@@ -90,7 +90,7 @@ class JpegtranToolkitHelper {
      *
      * @static
      */
-    function testBinary($jpegtranPath) {
+    static function testBinary($jpegtranPath) {
 	global $gallery;
 	$platform =& $gallery->getPlatform();
 	$slash = $platform->getDirectorySeparator();

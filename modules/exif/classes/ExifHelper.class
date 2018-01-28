@@ -82,7 +82,7 @@ class ExifHelper {
      * @param int $viewMode
      * @return GalleryStatus a status code
      */
-    function setDefaultProperties($viewMode) {
+    static function setDefaultProperties($viewMode) {
 	switch ($viewMode) {
 	case EXIF_SUMMARY:
 	    /* This is an initial install; make sure that we have some reasonable defaults */
@@ -498,7 +498,7 @@ class ExifHelper {
      * @param array $properties logical property key/value pairs
      * @return GalleryStatus a status code
      */
-    function setProperties($viewMode, $properties) {
+    static function setProperties($viewMode, $properties) {
 
 	/* Remove all old map entries */
 	$ret = GalleryCoreApi::removeMapEntry(
