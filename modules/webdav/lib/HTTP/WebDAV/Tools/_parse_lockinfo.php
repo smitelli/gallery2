@@ -88,7 +88,7 @@ class _parse_lockinfo
      * @param resource input stream file descriptor
      * @access public
      */
-    function _parse_lockinfo($handle)
+    function __construct($handle)
     {
         // open input stream
         if (!$handle) {

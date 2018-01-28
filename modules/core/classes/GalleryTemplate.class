@@ -60,7 +60,7 @@ class GalleryTemplate {
     var $_compiledTemplateDir;
 
 
-    function GalleryTemplate($templateDir, $initSmarty=true, $trimWhitespace=true) {
+    function __construct($templateDir, $initSmarty=true, $trimWhitespace=true) {
 	global $gallery;
 	$this->_templateDir = $templateDir;
 
