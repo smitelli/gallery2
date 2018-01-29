@@ -285,7 +285,7 @@ class ADODB_db2 extends ADOConnection {
 		return $ret;
 	}
 	
-	function MetaPrimaryKeys($table)
+	function MetaPrimaryKeys($table, $owner=false)
 	{
 	global $ADODB_FETCH_MODE;
 	
@@ -361,7 +361,7 @@ class ADODB_db2 extends ADOConnection {
 	}
 	
 	
-	function &MetaTables($ttype=false,$schema=false)
+	function &MetaTables($ttype=false,$schema=false,$mask=false)
 	{
 	global $ADODB_FETCH_MODE;
 	
@@ -466,7 +466,7 @@ See http://msdn.microsoft.com/library/default.asp?url=/library/en-us/db2/htm/db2
 		}
 	}
 	
-	function &MetaColumns($table)
+	function &MetaColumns($table,$normalize=true)
 	{
 	global $ADODB_FETCH_MODE;
 	

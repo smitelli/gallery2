@@ -210,12 +210,12 @@ class ADODB_pdo_sqlite extends ADODB_pdo {
 		return $this->Execute("insert into $seqname values($start)");
 	}
 
-	function DropSequence($seqname) {
+	function DropSequence($seqname='') {
 		if (empty($this->_dropSeqSQL)) return false;
 		return $this->Execute(sprintf($this->_dropSeqSQL,$seqname));
 	}
 
-        function &MetaColumns($tab) {
+        function &MetaColumns($tab=null, $normalize=true) {
 	  global $ADODB_FETCH_MODE;
 	  $false = false;
 	  $save = $ADODB_FETCH_MODE;
@@ -253,7 +253,7 @@ class ADODB_pdo_sqlite extends ADODB_pdo {
 	  return $arr;
 	}
 
-        function MetaTables($ttype=false,$showSchema=false,$mask=false) {
+        function &MetaTables($ttype=false,$showSchema=false,$mask=false) {
             return $this->GetCol($this->metaTablesSQL);
         }
 

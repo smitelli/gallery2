@@ -135,7 +135,7 @@ class GalleryPendingUser extends GalleryEntity {
      *
      * @return GalleryStatus a status code
      */
-    function create($userName) {
+    function create($userName=null) {
 	global $gallery;
 
 	/* first check for a collision in the pending users table */

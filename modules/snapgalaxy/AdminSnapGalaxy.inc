@@ -32,7 +32,7 @@ class AdminSnapGalaxyController extends GalleryController {
     /**
      * @see GalleryController::handleRequest
      */
-    function handleRequest(&$form) {
+    function handleRequest($form) {
 	$ret = GalleryCoreApi::assertUserIsSiteAdministrator();
 	if ($ret) {
 	    return array($ret, null);

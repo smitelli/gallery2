@@ -251,7 +251,7 @@ class CommentModule extends GalleryModule {
     /**
      * @see GalleryModule::getItemLinks
      */
-    function getItemLinks($items, $wantsDetailedLinks, $permissions) {
+    function getItemLinks($items, $wantsDetailedLinks, $permissions, $userId=null) {
 	list ($ret, $showAll) = $this->getParameter('comments.latest');
 	if ($ret) {
 	    return array($ret, null);

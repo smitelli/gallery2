@@ -91,7 +91,7 @@ class perf_db2 extends adodb_perf{
 	}
 	
 	
-	function Tables()
+	function Tables($orderby=null)
 	{
 		$rs = $this->conn->Execute("select tabschema,tabname,card as rows,
 			npages pages_used,fpages pages_allocated, tbspace tablespace  

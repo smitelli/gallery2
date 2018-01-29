@@ -320,7 +320,7 @@ class UpgradeOtherModulesStep extends UpgradeStep {
 	/* Deactivate any plugins that need it */
 	eval('
 	    class MockTheme extends GalleryTheme {
-		function __construct($pluginId) {
+		function __construct($pluginId=null) {
 		  $this->_pluginId = $pluginId;
 		}
 

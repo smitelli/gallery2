@@ -291,18 +291,18 @@ class ADODB_pdo extends ADOConnection {
 		return ADOConnection::ServerInfo();
 	}
 	
-	function SelectLimit($sql,$nrows=-1,$offset=-1,$inputarr=false,$secs2cache=0)
+	function &SelectLimit($sql,$nrows=-1,$offset=-1,$inputarr=false,$secs2cache=0)
 	{
 		$ret = ADOConnection::SelectLimit($sql,$nrows,$offset,$inputarr,$secs2cache);
 		return $ret;
 	}
 	
-	function MetaTables()
+	function &MetaTables($ttype=false, $showSchema=false, $mask=false)
 	{
 		return false;
 	}
 	
-	function MetaColumns()
+	function &MetaColumns($table=null, $normalize=true)
 	{
 		return false;
 	}

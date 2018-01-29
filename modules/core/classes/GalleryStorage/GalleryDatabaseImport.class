@@ -137,8 +137,8 @@ class GalleryDatabaseImport extends GalleryImportElement {
      */
     var $_fileReadChunkSize = 8192;
 
-    function __construct() {
-	parent::__construct();
+    function __construct($parent=null) {
+	parent::__construct($parent);
     }
 
     /**
@@ -374,7 +374,7 @@ class GalleryDatabaseImport extends GalleryImportElement {
  * @private
  */
 class _GalleryExportTag extends GalleryImportElement {
-    function __construct($parent, $attributes) {
+    function __construct($parent=null, $attributes=null) {
 	parent::__construct($parent);
 	$this->writeVersions($attributes['core-version'], $attributes['gallery-version']);
 	$this->updateStatus(0, $attributes['tables']);
@@ -426,7 +426,7 @@ class _GalleryPluginTag extends GalleryImportElement {
     /** Variable to hold the module id */
     var $_id;
 
-    function __construct($parent, $attributes) {
+    function __construct($parent=null, $attributes=null) {
 	parent::__construct($parent);
 	$this->_id = $attributes['id'];
     }
@@ -456,7 +456,7 @@ class _GallerySequenceTag extends GalleryImportElement {
     /** The starting value. */
     var $_startValue;
     
-    function __construct($parent, $attributes) {
+    function __construct($parent=null, $attributes=null) {
 	parent::__construct($parent);
 	$this->_sequenceName = $attributes['name'];
 	$this->_startValue = $attributes['start-value'];
@@ -492,7 +492,7 @@ class _GalleryTableTag extends GalleryImportElement {
     /** Variable to hold the table name */
     var $_name;
 
-    function __construct($parent, $attributes) {
+    function __construct($parent=null, $attributes=null) {
     	parent::__construct($parent);
 	$this->_name = $attributes['name'];
     }
@@ -534,7 +534,7 @@ class _GalleryTableDefinitionTag extends GalleryImportElement {
     /** Holds the table type */
     var $_tableType = null;
 
-    function __construct($parent, $tableName, $attributes) {
+    function __construct($parent=null, $tableName=null, $attributes=null) {
 	parent::__construct($parent);
 	$this->_name = $tableName;
 	$this->_moduleId = $attributes['module-id'];
@@ -608,7 +608,7 @@ class _GalleryCreateSqlTag extends GalleryImportElement {
     /** Holds the generated insert for this table */
     var $_currentSql = '';
 
-    function GalleryTableImport($parent, $attributes) {
+    function GalleryTableImport($parent=null, $attributes=null) {
 	parent::__construct($parent);
 	$this->_currentSql = '';
     }
@@ -632,7 +632,7 @@ class _GalleryTableInfoTag extends GalleryImportElement {
     /** Holds the table type */
     var $_tableType = null;
 
-    function __construct($parent, $attributes) {
+    function __construct($parent=null, $attributes=null) {
 	parent::__construct($parent);
 	$this->_tableInfo = '';
 	$this->_tableType = $attributes['type'];
@@ -660,7 +660,7 @@ class _GalleryDataTag extends GalleryImportElement {
     /** Row counter so we can provide feedback to the user. */
     var $_rowCounter;
 
-    function __construct($parent, $tableName, $attributes) {
+    function __construct($parent=null, $tableName=null, $attributes=null) {
 	parent::__construct($parent);
 
 	list ($this->_tableName) = $this->_storage->_translateTableName($tableName);
@@ -711,7 +711,7 @@ class _GalleryFieldDefinitionTag extends GalleryImportElement {
     /** Name of the column */
     var $_translatedName = array();
     
-    function __construct($parent, $attributes) {
+    function __construct($parent=null, $attributes=null) {
 	parent::__construct($parent);
 	$colName = GalleryUtilities::strToLower($attributes['name']);
 	$this->_translatedName = $this->_storage->_translateColumnName($colName);
@@ -742,7 +742,7 @@ class _GalleryRowTag extends GalleryImportElement {
     /** Holds the generated insert for this table */
     var $_currentSql;
 
-    function __construct($parent, $tableName, $fields, $attributes) {
+    function __construct($parent=null, $tableName=null, $fields=null, $attributes=null) {
 	parent::__construct($parent);
 	$this->_fields = $fields;
 	$this->_fieldNames = array_keys($fields);
@@ -801,7 +801,7 @@ class _GalleryFieldValueTag extends GalleryImportElement {
     /** Temporary storage for the null field value indicator */
     var $_memberData;
 
-    function __construct($parent, $memberData, $attributes) {
+    function __construct($parent=null, $memberData=null, $attributes=null) {
 	parent::__construct($parent);
 	$this->_fieldData = '';
 	$this->_isFieldNull = !empty($attributes['null']);

@@ -38,7 +38,7 @@ class RedirectController extends GalleryController {
     /**
      * @see GalleryController::handleRequest
      */
-    function handleRequest(&$form) {
+    function handleRequest($form) {
 	$alias = GalleryUtilities::getRequestVariables('filename');
 	if (empty($alias)) {
 	    return array(GalleryCoreApi::error(ERROR_BAD_PARAMETER), null);

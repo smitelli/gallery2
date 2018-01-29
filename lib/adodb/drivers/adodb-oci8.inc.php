@@ -97,7 +97,7 @@ class ADODB_oci8 extends ADOConnection {
 	}
 	
 	/*  Function &MetaColumns($table) added by smondino@users.sourceforge.net*/
-	function &MetaColumns($table) 
+	function &MetaColumns($table, $normalize=true) 
 	{
 	global $ADODB_FETCH_MODE;
 	
@@ -1161,7 +1161,7 @@ SELECT /*+ RULE */ distinct b.column_name
 	}
 	
 	// http://gis.mit.edu/classes/11.521/sqlnotes/referential_integrity.html
-	function MetaForeignKeys($table, $owner=false)
+	function MetaForeignKeys($table, $owner=false, $upper=false)
 	{
 	global $ADODB_FETCH_MODE;
 	
@@ -1480,7 +1480,7 @@ class ADORecordset_oci8 extends ADORecordSet {
 		
 	}
 
-	function MetaType($t,$len=-1)
+	function MetaType($t,$len=-1,$fieldobj=false)
 	{
 		if (is_object($t)) {
 			$fieldobj = $t;

@@ -108,7 +108,7 @@ class GalleryMovieItem extends GalleryDataItem {
      *        of copy (default is false).
      * @return GalleryStatus a status code
      */
-    function create($parentId, $videoFileName, $mimeType, $targetName=null, $symlink=false) {
+    function create($parentId=null, $videoFileName=null, $mimeType=null, $targetName=null, $symlink=false) {
 	global $gallery;
 	$platform =& $gallery->getPlatform();
 

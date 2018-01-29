@@ -1486,7 +1486,7 @@ class StringParser_Node_Text extends StringParser_Node {
 	 *                        occurred at. If not determinable, it is -1.
 	 * @see StringParser_Node_Text::content
 	 */
-	function __construct ($content, $occurredAt = -1) {
+	function __construct ($content = null, $occurredAt = -1) {
 		parent::__construct ($occurredAt);
 		$this->content = $content;
 	}

@@ -34,7 +34,7 @@ class NewAlbumController extends GalleryController {
     /**
      * @see GalleryController::handleRequest
      */
-    function handleRequest(&$form) {
+    function handleRequest($form) {
 	global $gallery;
 	$platform =& $gallery->getPlatform();
 	$results = $error = $status = array();

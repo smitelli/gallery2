@@ -160,7 +160,7 @@ class GalleryEntity extends GalleryPersistent {
      *
      * @return GalleryStatus a status code
      */
-    function create() {
+    function create($parentId=null) {
 	global $gallery;
 
 	/* Create a new instance of this entity in the persistent store */

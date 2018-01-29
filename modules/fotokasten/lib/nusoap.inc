@@ -2213,7 +2213,7 @@ class wsdl extends XMLSchema {
      * @param string $wsdl WSDL document URL
      * @access public 
      */
-    function __construct($wsdl = '')
+    function __construct($wsdl = '', $xml = '')
     {
         $this->wsdl = $wsdl; 
         // parse wsdl file

@@ -299,7 +299,7 @@ class ADORecordset_oracle extends ADORecordSet {
 		   return @ora_close($this->_queryID);
    }
 
-	function MetaType($t,$len=-1)
+	function MetaType($t,$len=-1,$fieldobj=false)
 	{
 		if (is_object($t)) {
 			$fieldobj = $t;
