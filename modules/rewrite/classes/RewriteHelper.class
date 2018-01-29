@@ -354,7 +354,7 @@ class RewriteHelper {
      *             considered to be respectively less than, equal to, or greater than the second
      * @access private
      */
-    function _sortRules($a, $b) {
+    static function _sortRules($a, $b) {
 	/* Flags: rules which don't allow subrequests come last */
 	if (in_array('L', $a['flags']) xor in_array('L', $b['flags'])) {
 	    if (in_array('L', $b['flags'])) {
