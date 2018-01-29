@@ -286,6 +286,11 @@ class GdToolkitHelper {
 	if (preg_match('/^>?2\.0/', $gdVersion)) {
 	    return array(null, true);
 	}
+	if (preg_match('/^(\d+)\.(\d+)/', $gdVersion, $matches)) {
+	    if ($matches[1] >= 2) {
+		return array(null, true);
+	    }
+	}
 	/* 1.6, 1.8, ... is too old */
 	return array(null, false);
     }
