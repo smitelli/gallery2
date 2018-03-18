@@ -27,6 +27,11 @@
  * @version $Revision: 17580 $
  */
 class PicLensHelper {
+    // NOTE: This class tries to download and install a JS and an SWF file from
+    // http://lite.piclens.com during setup. Unfortunately this domain no longer
+    // exists and no reasonable mirror of the files can be located. The
+    // installation will not succeed in this state, throwing the following:
+    // "ERROR_PLATFORM_FAILURE in modules/slideshow/classes/PicLensHelper.class at line 71"
 
     /**
      * Download the latest Javascript and Shockwave code from the PicLens site.

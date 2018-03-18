@@ -205,9 +205,6 @@ function pickfield(s) {
     if (pickdata.length>0) pickfield(document.getElementById('picksel'));
     // ]]>
   </script>
-  {else}
-    <p class="giInfo"> {g->text text="Add a custom field above to enable this section."} </p>
-  {/if}
 </div>
 
 <div class="gbBlock gcBackground1">
@@ -215,4 +212,7 @@ function pickfield(s) {
    name="{g->formVar var="form[action][picklist]"}" value="{g->text text="Save"}"/>
   <input type="submit" class="inputTypeSubmit"
    name="{g->formVar var="form[action][reset]"}" value="{g->text text="Reset"}"/>
+  {else}
+    <p class="giInfo"> {g->text text="Add a custom field above to enable this section."} </p>
+  {/if}
 </div>
