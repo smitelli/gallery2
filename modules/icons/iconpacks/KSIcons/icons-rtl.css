@@ -132,18 +132,9 @@ li.giSelected {
 .gbLink-exif_AdminExif {
   background-image: url(exif_parser.gif);
 }
-/* .gbLink-getid3_AdminGetid3 {
-  background-image: url(getid3.gif);
-} */
 .gbLink-mime_MimeAdmin {
   background-image: url(mime_types.gif);
 }
-/* .gbLink-multilang_MultiLangSiteAdmin {
-  background-image: url(multilang.gif);
-}
-.gbLink-rating_RatingSiteAdmin {
-  background-image: url(rating.gif);
-} */
 
 /* Graphics Toolkits */
 .gbLink-dcraw_AdminDcraw {
@@ -171,9 +162,6 @@ li.giSelected {
 }
 
 /* Gallery */
-/* .gbLink-captcha_CaptchaSiteAdmin {
-  background-image: url(captcha.gif);
-} */
 .gbLink-debug_ShowTree {
   background-image: url(debug.gif);
 }
@@ -184,9 +172,6 @@ li.giSelected {
 .gbLink-core_ItemAdmin-notification_NotificationItemAdmin {
   background-image: url(watch.gif);
 }
-/* .gbLink-permalinks_PermalinksSiteAdmin {
-  background-image: url(permalinks.gif);
-} */
 .gbLink-quotas_AdminQuotas {
   background-image: url(quota.gif);
 }
@@ -240,9 +225,6 @@ li.giSelected {
 .gbLink-slideshowapplet_SlideshowAppletSiteAdmin {
   background-image: url(view_fullscreen_slideshow.gif);
 }
-/* .gbLink-squarethumb_SquareThumbSiteAdmin {
-  background-image: url(squarethumb.gif);
-} */
 .gbLink-thumbnail_ThumbnailSiteAdmin {
   background-image: url(thumbnails.gif);
 }
@@ -296,9 +278,6 @@ li.giSelected {
 .gbLink-rss_SimpleRender, .gbLink-core_ItemAdmin-rss_EditFeed, .gbLink-rss_RssSiteAdmin {
   background-image: url(rss_feed.gif);
 }
-/* .gbLink-sitemap_AdminSitemap {
-  background-image: url(google_sitemap.gif);
-} */
 
 /* Addviaemail Configure */
 .gbLink-addviaemail_Configure {
