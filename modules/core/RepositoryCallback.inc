@@ -77,6 +77,7 @@ class RepositoryCallbackView extends GalleryView {
 	    }
 
 	    /* Remove the default repositories from the data cache */
+	    GalleryCoreApi::requireOnce('modules/core/classes/GalleryRepository.class');
 	    GalleryRepository::clearRepositoryCache();
 	}
 	return null;
