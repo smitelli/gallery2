@@ -193,11 +193,10 @@ class FfmpegToolkitHelper {
 	}
 
 	/* We only care about video for now */
-	/** @todo: Add '3g2' => '3g2', '3gp' => '3gp' when recognized as videos */
 	$relevantTypes = array('mpeg' => 'mpeg', 'asf' => 'asf', 'avi' => 'avi',
-			       'mov' => 'mov', 'wmv1' => 'wmv', 'flv' => 'flv', 'mp4' => 'mp4');
-	/* We only care about encoding flash video for now */
-	$relevantEncode = array('flv' => 'flv');
+			       'mov' => 'mov', 'wmv1' => 'wmv', 'flv' => 'flv', 'mp4' => 'mp4',
+			       '3g2' => '3g2', '3gp' => '3gp');
+	$relevantEncode = array('flv' => 'flv', 'mp4' => 'mp4');
 	/**
 	 * @todo: Add 'adpcm_swf' => 'adpcm_swf' to relevantAudioCodecs if/when videos play
 	 *        correctly
@@ -205,7 +204,7 @@ class FfmpegToolkitHelper {
 	$relevantAudioCodecs = array('mp3' => 'mp3', 'libmp3lame' => 'mp3');
 	list ($ignored, $results) = $platform->exec(array(array($ffmpegPath, '-formats')));
 	$version = array();
-	list ($ignored, $ignored, $version) =
+	list ($ignored, $version) =
 		$platform->exec(array(array($ffmpegPath, '-version')));
 
 	$mimeTypes = array();
@@ -252,7 +251,37 @@ class FfmpegToolkitHelper {
 	     *   EA    ac3
 	     *  DEA    adpcm_4xm
 	     */
-	    if (preg_match('|Input audio/video file formats: (.*)$|', $resultLine, $regs)) {
+	    if (strpos($version[0], 'ffmpeg version 3.') !== false) {
+		while (strpos($resultLine, ' --') !== 0) {
+		    $resultLine = $results[$i++];
+		}
+
+		while ($resultLine = @$results[$i++]) {
+		    list ($capabilities, $types, $description) =
+			preg_split('/\s+/', $resultLine, -1, PREG_SPLIT_NO_EMPTY);
+		    foreach (explode(',', $types) as $type) {
+			if (isset($relevantTypes[$type])) {
+			    list ($ret, $mime) = GalleryCoreApi::convertExtensionToMime(
+				$relevantTypes[$type]);
+			    if ($ret) {
+				return array($ret, null, null, null, null, null, null);
+			    }
+			    if (preg_match('|D|', $capabilities)) {
+				$mimeTypes[$mime] = 1;
+			    }
+			    if (isset($relevantEncode[$type])
+				    && preg_match('|E|', $capabilities)) {
+				$mimeTypesEncoder[$mime] = 1;
+			    }
+			}
+			if (isset($relevantAudioCodecs[$type])
+				&& preg_match('|E|', $capabilities)) {
+			    $encoderAudioCodecs[$relevantAudioCodecs[$type]] = 1;
+			}
+		    }
+		}
+		$success = true;
+	    } else if (preg_match('|Input audio/video file formats: (.*)$|', $resultLine, $regs)) {
 		/* We have found 0.4.7 format, read single line */
 		/** @todo: Support mimeTypesEncoder and encoderAudioCodecs */
 		foreach (explode(' ', $regs[1]) as $type) {
