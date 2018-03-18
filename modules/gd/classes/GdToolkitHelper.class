@@ -37,7 +37,7 @@ class GdToolkitHelper {
      *	 array('operations' => ...
      *	       'properties' => ...)
      */
-    function getOperationsAndProperties($gd=null) {
+    static function getOperationsAndProperties($gd=null) {
 	global $gallery;
 
 	if (!isset($gd)) {
@@ -181,7 +181,7 @@ class GdToolkitHelper {
      * Checks if a certain operation is supported by this GD library
      * @return boolean
      */
-    function isOperationSupported($operation, $gd=null) {
+    static function isOperationSupported($operation, $gd=null) {
 	if (!isset($gd)) {
 	    $gd =& GdToolkitHelper::getGdFunctionality();
 	}
@@ -211,7 +211,7 @@ class GdToolkitHelper {
      * The minimal version of GD that this module supports
      * @return string A version string
      */
-    function minGdVersion() {
+    static function minGdVersion() {
 	return '2.0';
     }
 
@@ -303,7 +303,7 @@ class GdToolkitHelper {
      * @return array GalleryStatus
      *	       boolean true if it is the bundled library, false otherwise
      */
-    function isBundled($gd=null) {
+    static function isBundled($gd=null) {
 	if (!isset($gd)) {
 	    $gd =& GdToolkitHelper::getGdFunctionality();
 	}
@@ -320,7 +320,7 @@ class GdToolkitHelper {
      * @return array GalleryStatus
      *	       array supported mime-types
      */
-    function discoverMimeTypes($gd=null) {
+    static function discoverMimeTypes($gd=null) {
 	if (!isset($gd)) {
 	    $gd =& GdToolkitHelper::getGdFunctionality();
 	}
@@ -368,7 +368,7 @@ class GdToolkitHelper {
      *
      * @return boolean
      */
-    function hasImageCreateTrueColor($gd=null) {
+    static function hasImageCreateTrueColor($gd=null) {
 	if (!isset($gd)) {
 	    $gd =& GdToolkitHelper::getGdFunctionality();
 	}

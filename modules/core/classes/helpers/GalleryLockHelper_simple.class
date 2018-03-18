@@ -33,7 +33,7 @@ class GalleryLockHelper_simple {
      * @see GalleryCoreApi::getLockIds
      * @see GalleryLockSystem::getLockIds
      */
-    function getLockIds() {
+    static function getLockIds() {
 	global $gallery;
 	$result =& $gallery->getLockSystem();
 	$ret = $result[0];
@@ -70,7 +70,7 @@ class GalleryLockHelper_simple {
     /**
      * @see GalleryCoreApi::acquireReadLockParents
      */
-    function acquireReadLockParents($id, $timeout=10) {
+    static function acquireReadLockParents($id, $timeout=10) {
 	global $gallery;
 
 	/*
@@ -226,7 +226,7 @@ class GalleryLockHelper_simple {
      * @see GalleryCoreApi::releaseAllLocks
      * @see GalleryLockSystem::releaseAllLocks
      */
-    function releaseAllLocks() {
+    static function releaseAllLocks() {
 	global $gallery;
 	$result =& $gallery->getLockSystem();
 	$ret = $result[0];
@@ -247,7 +247,7 @@ class GalleryLockHelper_simple {
      * @see GalleryCoreApi::refreshLocks
      * @see GalleryLockSystem::refreshLocks
      */
-    function refreshLocks($freshUntil) {
+    static function refreshLocks($freshUntil) {
 	global $gallery;
 	$result =& $gallery->getLockSystem();
 	$ret = $result[0];

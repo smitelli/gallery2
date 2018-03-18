@@ -1059,7 +1059,7 @@ class getid3_riff
 		return true;
 	}
 
-	function ParseRIFF(&$fd, $startoffset, $maxoffset, &$ThisFileInfo) {
+	static function ParseRIFF(&$fd, $startoffset, $maxoffset, &$ThisFileInfo) {
 
 		$maxoffset = min($maxoffset, $ThisFileInfo['avdataend']);
 
@@ -1307,7 +1307,7 @@ class getid3_riff
 	}
 
 
-	function ParseRIFFdata(&$RIFFdata, &$ThisFileInfo) {
+	static function ParseRIFFdata(&$RIFFdata, &$ThisFileInfo) {
 		if ($RIFFdata) {
 
 		    $tempfile = tempnam('*', 'getID3');
@@ -1336,7 +1336,7 @@ class getid3_riff
 	}
 
 
-	function RIFFparseWAVEFORMATex($WaveFormatExData) {
+	static function RIFFparseWAVEFORMATex($WaveFormatExData) {
 		// shortcut
 		$WaveFormatEx['raw'] = array();
 		$WaveFormatEx_raw    = &$WaveFormatEx['raw'];
@@ -1361,7 +1361,7 @@ class getid3_riff
 	}
 
 
-	function RIFFparseWavPackHeader($WavPackChunkData, &$ThisFileInfo) {
+	static function RIFFparseWavPackHeader($WavPackChunkData, &$ThisFileInfo) {
 		// typedef struct {
 		//     char ckID [4];
 		//     long ckSize;
@@ -1421,7 +1421,7 @@ class getid3_riff
 		return true;
 	}
 
-	function RIFFwFormatTagLookup($wFormatTag) {
+	static function RIFFwFormatTagLookup($wFormatTag) {
 
 		$begin = __LINE__;
 
@@ -1592,7 +1592,7 @@ class getid3_riff
 	}
 
 
-	function RIFFfourccLookup($fourcc) {
+	static function RIFFfourccLookup($fourcc) {
 
 		$begin = __LINE__;
 
@@ -1983,7 +1983,7 @@ class getid3_riff
 	}
 
 
-	function EitherEndian2Int(&$ThisFileInfo, $byteword, $signed=false) {
+	static function EitherEndian2Int(&$ThisFileInfo, $byteword, $signed=false) {
 		if ($ThisFileInfo['fileformat'] == 'riff') {
 			return getid3_lib::LittleEndian2Int($byteword, $signed);
 		}

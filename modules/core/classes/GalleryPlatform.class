@@ -150,7 +150,7 @@ class GalleryPlatform {
      * @param string $filename full filesystem path to a file
      * @return boolean true if the file exists, false otherwise
      */
-    function file_exists($filename) {
+    static function file_exists($filename) {
 	global $gallery;
 	if ($gallery->getDebug()) {
 	    $gallery->debug("file_exists($filename)");

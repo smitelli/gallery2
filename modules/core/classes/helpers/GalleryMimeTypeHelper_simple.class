@@ -73,7 +73,7 @@ class GalleryMimeTypeHelper_simple {
     /**
      * @see GalleryCoreApi::convertMimeToExtensions
      */
-    function convertMimeToExtensions($mimeType) {
+    static function convertMimeToExtensions($mimeType) {
 	list ($ret, $mimeData) = GalleryMimeTypeHelper_simple::_getMimeData();
 	if ($ret) {
 	    return array($ret, null);
@@ -88,7 +88,7 @@ class GalleryMimeTypeHelper_simple {
     /**
      * @see GalleryCoreApi::isViewableMimeType
      */
-    function isViewableMimeType($mimeType) {
+    static function isViewableMimeType($mimeType) {
 	list ($ret, $mimeData) = GalleryMimeTypeHelper_simple::_getMimeData();
 	if ($ret) {
 	    return array($ret, null);

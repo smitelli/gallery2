@@ -1428,7 +1428,7 @@ class ConfirmImportController extends GalleryController {
      * @param string $item input string
      * @return string
      */
-    function convertHtml($markupType, $item, $sourceEncoding='UTF-8') {
+    static function convertHtml($markupType, $item, $sourceEncoding='UTF-8') {
 	$item = GalleryCoreApi::convertToUtf8($item, $sourceEncoding);
 	switch ($markupType) {
 	case 'bbcode':
@@ -1452,7 +1452,7 @@ class ConfirmImportController extends GalleryController {
      * @param string $item item to convert
      * @return string
      */
-    function convertHtmlToBbcode($item) {
+    static function convertHtmlToBbcode($item) {
 	static $patterns, $match, $replace;
 	if (!isset($patterns)) {
 	    $patterns = array(

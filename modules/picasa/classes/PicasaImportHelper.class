@@ -34,7 +34,7 @@ class PicasaImportHelper {
      * @param string $sourceEncoding (optional; default='UTF-8')
      * @return string
      */
-    function convertHtml($markupType, $item, $sourceEncoding='UTF-8') {
+    static function convertHtml($markupType, $item, $sourceEncoding='UTF-8') {
 	$item = GalleryCoreApi::convertToUtf8($item, $sourceEncoding);
 	switch ($markupType) {
 	    case 'bbcode':
@@ -58,7 +58,7 @@ class PicasaImportHelper {
      * @param string $item item to convert
      * @return string
      */
-    function convertHtmlToBbcode($item) {
+    static function convertHtmlToBbcode($item) {
 	static $patterns, $match, $replace;
 	if (!isset($patterns)) {
 	    $patterns = array(

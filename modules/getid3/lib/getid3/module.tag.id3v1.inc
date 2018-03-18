@@ -105,7 +105,7 @@ class getid3_id3v1
 		return trim(substr($str, 0, strcspn($str, "\x00")));
 	}
 
-	function ArrayOfGenres($allowSCMPXextended=false) {
+	static function ArrayOfGenres($allowSCMPXextended=false) {
 		static $GenreLookup = array(
 			0    => 'Blues',
 			1    => 'Classic Rock',
@@ -289,7 +289,7 @@ class getid3_id3v1
 		return ($allowSCMPXextended ? $GenreLookupSCMPX : $GenreLookup);
 	}
 
-	function LookupGenreName($genreid, $allowSCMPXextended=true) {
+	static function LookupGenreName($genreid, $allowSCMPXextended=true) {
 		switch ($genreid) {
 			case 'RX':
 			case 'CR':
@@ -302,7 +302,7 @@ class getid3_id3v1
 		return (isset($GenreLookup[$genreid]) ? $GenreLookup[$genreid] : false);
 	}
 
-	function LookupGenreID($genre, $allowSCMPXextended=false) {
+	static function LookupGenreID($genre, $allowSCMPXextended=false) {
 		$GenreLookup = getid3_id3v1::ArrayOfGenres($allowSCMPXextended);
 		$LowerCaseNoSpaceSearchTerm = strtolower(str_replace(' ', '', $genre));
 		foreach ($GenreLookup as $key => $value) {

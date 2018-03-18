@@ -37,7 +37,7 @@ class getid3_flac
 	}
 
 
-	function FLACparseMETAdata(&$fd, &$ThisFileInfo) {
+	static function FLACparseMETAdata(&$fd, &$ThisFileInfo) {
 
 		do {
 			$METAdataBlockOffset          = ftell($fd);
@@ -154,7 +154,7 @@ class getid3_flac
 		return true;
 	}
 
-	function FLACmetaBlockTypeLookup($blocktype) {
+	static function FLACmetaBlockTypeLookup($blocktype) {
 		static $FLACmetaBlockTypeLookup = array();
 		if (empty($FLACmetaBlockTypeLookup)) {
 			$FLACmetaBlockTypeLookup[0] = 'STREAMINFO';
@@ -167,7 +167,7 @@ class getid3_flac
 		return (isset($FLACmetaBlockTypeLookup[$blocktype]) ? $FLACmetaBlockTypeLookup[$blocktype] : 'reserved');
 	}
 
-	function FLACapplicationIDLookup($applicationid) {
+	static function FLACapplicationIDLookup($applicationid) {
 		static $FLACapplicationIDLookup = array();
 		if (empty($FLACapplicationIDLookup)) {
 			// http://flac.sourceforge.net/id.html
@@ -177,7 +177,7 @@ class getid3_flac
 		return (isset($FLACapplicationIDLookup[$applicationid]) ? $FLACapplicationIDLookup[$applicationid] : 'reserved');
 	}
 
-	function FLACparseSTREAMINFO($METAdataBlockData, &$ThisFileInfo) {
+	static function FLACparseSTREAMINFO($METAdataBlockData, &$ThisFileInfo) {
 		$offset = 0;
 		$ThisFileInfo['flac']['STREAMINFO']['min_block_size']  = getid3_lib::BigEndian2Int(substr($METAdataBlockData, $offset, 2));
 		$offset += 2;
@@ -216,7 +216,7 @@ class getid3_flac
 	}
 
 
-	function FLACparseAPPLICATION($METAdataBlockData, &$ThisFileInfo) {
+	static function FLACparseAPPLICATION($METAdataBlockData, &$ThisFileInfo) {
 		$offset = 0;
 		$ApplicationID = getid3_lib::BigEndian2Int(substr($METAdataBlockData, $offset, 4));
 		$offset += 4;
@@ -228,7 +228,7 @@ class getid3_flac
 	}
 
 
-	function FLACparseSEEKTABLE($METAdataBlockData, &$ThisFileInfo) {
+	static function FLACparseSEEKTABLE($METAdataBlockData, &$ThisFileInfo) {
 		$offset = 0;
 		$METAdataBlockLength = strlen($METAdataBlockData);
 		$placeholderpattern = str_repeat("\xFF", 8);
@@ -254,7 +254,7 @@ class getid3_flac
 		return true;
 	}
 
-	function FLACparseCUESHEET($METAdataBlockData, &$ThisFileInfo) {
+	static function FLACparseCUESHEET($METAdataBlockData, &$ThisFileInfo) {
 		$offset = 0;
 		$ThisFileInfo['flac']['CUESHEET']['media_catalog_number'] =          trim(substr($METAdataBlockData, $offset, 128), "\0");
 		$offset += 128;

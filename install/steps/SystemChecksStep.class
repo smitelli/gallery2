@@ -435,7 +435,7 @@ class SystemChecksStep extends InstallStep {
 	return false;
     }
 
-    function CheckFileDirective() {
+    static function CheckFileDirective() {
 	if (strstr(__FILE__, 'install/steps/SystemChecksStep.class') ||
 	    strstr(__FILE__, '\\install\\steps\\SystemChecksStep.class')) {
 	    return true;
@@ -445,7 +445,7 @@ class SystemChecksStep extends InstallStep {
     }
 
     /** Verify that there is at least one themes/.../theme.inc file. */
-    function AssertThemeIsAvailable() {
+    static function AssertThemeIsAvailable() {
 	$themesFolder = dirname(dirname(dirname(__FILE__))) . '/themes/' ;
 	if (!file_exists($themesFolder)) {
 	    return false;
@@ -467,7 +467,7 @@ class SystemChecksStep extends InstallStep {
 	return false;
     }
 
-    function CheckManifest(&$statusMonitor, $useSetTimeLimit) {
+    static function CheckManifest(&$statusMonitor, $useSetTimeLimit) {
 	$base = realpath(dirname(__FILE__) . '/../..') . '/';
 
 	if ($useSetTimeLimit) {

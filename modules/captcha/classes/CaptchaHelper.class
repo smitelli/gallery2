@@ -57,7 +57,7 @@ class CaptchaHelper {
     /**
      * Generate a new captcha code and put it into the session.
      */
-    function generateCaptchaSessionKey() {
+    static function generateCaptchaSessionKey() {
 	global $gallery;
 
 	/* These letters are relatively unambiguous when made hard to read */

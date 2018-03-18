@@ -33,7 +33,7 @@ class ExifExtractor extends ExifInterface_1_0 {
     /**
      * @see ExifInterface_1_0::getMetaData
      */
-    function getMetaData($itemIds, $properties=array()) {
+    static function getMetaData($itemIds, $properties=array()) {
 	global $gallery;
 	GalleryCoreApi::requireOnce('modules/exif/lib/exifer/exif.inc');
 

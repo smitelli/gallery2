@@ -363,7 +363,7 @@
     	return !empty($this->_connectionID);
 	}
 	
-	function _findvers($str)
+	static function _findvers($str)
 	{
 		if (preg_match('/([0-9]+\.([0-9\.])+)/',$str, $arr)) return $arr[1];
 		else return '';
@@ -2475,7 +2475,7 @@ http://www.stanford.edu/dept/itss/docs/oracle/10g/server.101/b10759/statements_1
 	 *
 	 * @return date in unix timestamp format, or 0 if before TIMESTAMP_FIRST_YEAR, or false if invalid date format
 	 */
-	function UnixDate($v)
+	static function UnixDate($v)
 	{
 		if (is_object($v)) {
 		// odbtp support
@@ -2499,7 +2499,7 @@ http://www.stanford.edu/dept/itss/docs/oracle/10g/server.101/b10759/statements_1
 	 *
 	 * @return date in unix timestamp format, or 0 if before TIMESTAMP_FIRST_YEAR, or false if invalid date format
 	 */
-	function UnixTimeStamp($v)
+	static function UnixTimeStamp($v)
 	{
 		if (is_object($v)) {
 		// odbtp support
@@ -3096,7 +3096,7 @@ http://www.stanford.edu/dept/itss/docs/oracle/10g/server.101/b10759/statements_1
 	 *
 	 * @return date in unix timestamp format, or 0 if before TIMESTAMP_FIRST_YEAR, or false if invalid date format
 	 */
-	function UnixDate($v)
+	static function UnixDate($v)
 	{
 		return ADOConnection::UnixDate($v);
 	}
@@ -3107,7 +3107,7 @@ http://www.stanford.edu/dept/itss/docs/oracle/10g/server.101/b10759/statements_1
 	 *
 	 * @return date in unix timestamp format, or 0 if before TIMESTAMP_FIRST_YEAR, or false if invalid date format
 	 */
-	function UnixTimeStamp($v)
+	static function UnixTimeStamp($v)
 	{
 		return ADOConnection::UnixTimeStamp($v);
 	}

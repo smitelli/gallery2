@@ -142,7 +142,7 @@ class GalleryEntityHelper_simple {
     /**
      * @see GalleryCoreApi::loadEntityByExternalId
      */
-    function loadEntityByExternalId($externalId, $entityType) {
+    static function loadEntityByExternalId($externalId, $entityType) {
 	global $gallery;
 
 	list ($ret, $results) = GalleryCoreApi::getMapEntry('ExternalIdMap',

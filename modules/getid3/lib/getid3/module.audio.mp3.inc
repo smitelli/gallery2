@@ -157,7 +157,7 @@ class getid3_mp3
 	}
 
 
-	function GuessEncoderOptions(&$ThisFileInfo) {
+	static function GuessEncoderOptions(&$ThisFileInfo) {
 		// shortcuts
 		if (!empty($ThisFileInfo['mpeg']['audio'])) {
 			$thisfile_mpeg_audio = &$ThisFileInfo['mpeg']['audio'];
@@ -400,7 +400,7 @@ class getid3_mp3
 	}
 
 
-	function decodeMPEGaudioHeader($fd, $offset, &$ThisFileInfo, $recursivesearch=true, $ScanAsCBR=false, $FastMPEGheaderScan=false) {
+	static function decodeMPEGaudioHeader($fd, $offset, &$ThisFileInfo, $recursivesearch=true, $ScanAsCBR=false, $FastMPEGheaderScan=false) {
 
 		static $MPEGaudioVersionLookup;
 		static $MPEGaudioLayerLookup;
@@ -1069,7 +1069,7 @@ class getid3_mp3
 		return true;
 	}
 
-	function RecursiveFrameScanning(&$fd, &$ThisFileInfo, &$offset, &$nextframetestoffset, $ScanAsCBR) {
+	static function RecursiveFrameScanning(&$fd, &$ThisFileInfo, &$offset, &$nextframetestoffset, $ScanAsCBR) {
 		for ($i = 0; $i < GETID3_MP3_VALID_CHECK_FRAMES; $i++) {
 			// check next GETID3_MP3_VALID_CHECK_FRAMES frames for validity, to make sure we haven't run across a false synch
 			if (($nextframetestoffset + 4) >= $ThisFileInfo['avdataend']) {
@@ -1107,7 +1107,7 @@ class getid3_mp3
 		return true;
 	}
 
-	function FreeFormatFrameLength($fd, $offset, &$ThisFileInfo, $deepscan=false) {
+	static function FreeFormatFrameLength($fd, $offset, &$ThisFileInfo, $deepscan=false) {
 		fseek($fd, $offset, SEEK_SET);
 		$MPEGaudioData = fread($fd, 32768);
 
@@ -1318,7 +1318,7 @@ class getid3_mp3
 	}
 
 
-	function getOnlyMPEGaudioInfo($fd, &$ThisFileInfo, $avdataoffset, $BitrateHistogram=false) {
+	static function getOnlyMPEGaudioInfo($fd, &$ThisFileInfo, $avdataoffset, $BitrateHistogram=false) {
 		// looks for synch, decodes MPEG audio header
 
 		fseek($fd, $avdataoffset, SEEK_SET);
@@ -1547,17 +1547,17 @@ class getid3_mp3
 	}
 
 
-	function MPEGaudioVersionArray() {
+	static function MPEGaudioVersionArray() {
 		static $MPEGaudioVersion = array('2.5', false, '2', '1');
 		return $MPEGaudioVersion;
 	}
 
-	function MPEGaudioLayerArray() {
+	static function MPEGaudioLayerArray() {
 		static $MPEGaudioLayer = array(false, 3, 2, 1);
 		return $MPEGaudioLayer;
 	}
 
-	function MPEGaudioBitrateArray() {
+	static function MPEGaudioBitrateArray() {
 		static $MPEGaudioBitrate;
 		if (empty($MPEGaudioBitrate)) {
 		    $MPEGaudioBitrate = array (
@@ -1576,7 +1576,7 @@ class getid3_mp3
 		return $MPEGaudioBitrate;
 	}
 
-	function MPEGaudioFrequencyArray() {
+	static function MPEGaudioFrequencyArray() {
 		static $MPEGaudioFrequency;
 		if (empty($MPEGaudioFrequency)) {
 		    $MPEGaudioFrequency = array (
@@ -1588,12 +1588,12 @@ class getid3_mp3
 		return $MPEGaudioFrequency;
 	}
 
-	function MPEGaudioChannelModeArray() {
+	static function MPEGaudioChannelModeArray() {
 		static $MPEGaudioChannelMode = array('stereo', 'joint stereo', 'dual channel', 'mono');
 		return $MPEGaudioChannelMode;
 	}
 
-	function MPEGaudioModeExtensionArray() {
+	static function MPEGaudioModeExtensionArray() {
 		static $MPEGaudioModeExtension;
 		if (empty($MPEGaudioModeExtension)) {
 		    $MPEGaudioModeExtension = array (
@@ -1605,16 +1605,16 @@ class getid3_mp3
 		return $MPEGaudioModeExtension;
 	}
 
-	function MPEGaudioEmphasisArray() {
+	static function MPEGaudioEmphasisArray() {
 		static $MPEGaudioEmphasis = array('none', '50/15ms', false, 'CCIT J.17');
 		return $MPEGaudioEmphasis;
 	}
 
-	function MPEGaudioHeaderBytesValid($head4, $allowBitrate15=false) {
+	static function MPEGaudioHeaderBytesValid($head4, $allowBitrate15=false) {
 		return getid3_mp3::MPEGaudioHeaderValid(getid3_mp3::MPEGaudioHeaderDecode($head4), false, $allowBitrate15);
 	}
 
-	function MPEGaudioHeaderValid($rawarray, $echoerrors=false, $allowBitrate15=false) {
+	static function MPEGaudioHeaderValid($rawarray, $echoerrors=false, $allowBitrate15=false) {
 		if (($rawarray['synch'] & 0x0FFE) != 0x0FFE) {
 			return false;
 		}
@@ -1686,7 +1686,7 @@ class getid3_mp3
 		return true;
 	}
 
-	function MPEGaudioHeaderDecode($Header4Bytes) {
+	static function MPEGaudioHeaderDecode($Header4Bytes) {
 		// AAAA AAAA  AAAB BCCD  EEEE FFGH  IIJJ KLMM
 		// A - Frame sync (all bits set)
 		// B - MPEG Audio version ID
@@ -1723,7 +1723,7 @@ class getid3_mp3
 		return $MPEGrawHeader;
 	}
 
-	function MPEGaudioFrameLength(&$bitrate, &$version, &$layer, $padding, &$samplerate) {
+	static function MPEGaudioFrameLength(&$bitrate, &$version, &$layer, $padding, &$samplerate) {
 		static $AudioFrameLengthCache = array();
 
 		if (!isset($AudioFrameLengthCache[$bitrate][$version][$layer][$padding][$samplerate])) {
@@ -1784,7 +1784,7 @@ class getid3_mp3
 		return $AudioFrameLengthCache[$bitrate][$version][$layer][$padding][$samplerate];
 	}
 
-	function ClosestStandardMP3Bitrate($bitrate) {
+	static function ClosestStandardMP3Bitrate($bitrate) {
 		static $StandardBitrates = array(320000, 256000, 224000, 192000, 160000, 128000, 112000, 96000, 80000, 64000, 56000, 48000, 40000, 32000, 24000, 16000, 8000);
 		static $BitrateTable = array(0=>'-');
 		$roundbitrate = intval(round($bitrate, -3));
@@ -1805,7 +1805,7 @@ class getid3_mp3
 		return $BitrateTable[$roundbitrate];
 	}
 
-	function XingVBRidOffset($version, $channelmode) {
+	static function XingVBRidOffset($version, $channelmode) {
 		static $XingVBRidOffsetCache = array();
 		if (empty($XingVBRidOffset)) {
 			$XingVBRidOffset = array (
@@ -1831,7 +1831,7 @@ class getid3_mp3
 		return $XingVBRidOffset[$version][$channelmode];
 	}
 
-	function LAMEvbrMethodLookup($VBRmethodID) {
+	static function LAMEvbrMethodLookup($VBRmethodID) {
 		static $LAMEvbrMethodLookup = array(
 			0x00 => 'unknown',
 			0x01 => 'cbr',
@@ -1847,7 +1847,7 @@ class getid3_mp3
 		return (isset($LAMEvbrMethodLookup[$VBRmethodID]) ? $LAMEvbrMethodLookup[$VBRmethodID] : '');
 	}
 
-	function LAMEmiscStereoModeLookup($StereoModeID) {
+	static function LAMEmiscStereoModeLookup($StereoModeID) {
 		static $LAMEmiscStereoModeLookup = array(
 			0 => 'mono',
 			1 => 'stereo',
@@ -1861,7 +1861,7 @@ class getid3_mp3
 		return (isset($LAMEmiscStereoModeLookup[$StereoModeID]) ? $LAMEmiscStereoModeLookup[$StereoModeID] : '');
 	}
 
-	function LAMEmiscSourceSampleFrequencyLookup($SourceSampleFrequencyID) {
+	static function LAMEmiscSourceSampleFrequencyLookup($SourceSampleFrequencyID) {
 		static $LAMEmiscSourceSampleFrequencyLookup = array(
 			0 => '<= 32 kHz',
 			1 => '44.1 kHz',
@@ -1871,7 +1871,7 @@ class getid3_mp3
 		return (isset($LAMEmiscSourceSampleFrequencyLookup[$SourceSampleFrequencyID]) ? $LAMEmiscSourceSampleFrequencyLookup[$SourceSampleFrequencyID] : '');
 	}
 
-	function LAMEsurroundInfoLookup($SurroundInfoID) {
+	static function LAMEsurroundInfoLookup($SurroundInfoID) {
 		static $LAMEsurroundInfoLookup = array(
 			0 => 'no surround info',
 			1 => 'DPL encoding',
@@ -1881,7 +1881,7 @@ class getid3_mp3
 		return (isset($LAMEsurroundInfoLookup[$SurroundInfoID]) ? $LAMEsurroundInfoLookup[$SurroundInfoID] : 'reserved');
 	}
 
-	function LAMEpresetUsedLookup($LAMEtag) {
+	static function LAMEpresetUsedLookup($LAMEtag) {
 
         if ($LAMEtag['preset_used_id'] == 0) {
             // no preset used (LAME >=3.93)

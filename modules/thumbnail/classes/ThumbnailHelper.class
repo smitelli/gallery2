@@ -41,7 +41,7 @@ class ThumbnailHelper {
      * @return array GalleryStatus a status code
      *               array of itemId=>fileName
      */
-    function fetchThumbnails($listAll=false, $count=null, $offset=null, $substring=null) {
+    static function fetchThumbnails($listAll=false, $count=null, $offset=null, $substring=null) {
 	global $gallery;
 
 	$where = $data = array();
@@ -85,7 +85,7 @@ class ThumbnailHelper {
      * @return array GalleryStatus a status code
      *               ThumbnailImage or null
      */
-    function fetchThumbnail($itemId) {
+    static function fetchThumbnail($itemId) {
 	global $gallery;
 
 	list ($ret, $searchResults) = $gallery->search(
@@ -335,7 +335,7 @@ class ThumbnailHelper {
      * @param int $thumbnailId id of ThumbnailImage
      * @return GalleryStatus a status code
      */
-    function applyThumbnail(&$item, $thumbnailId) {
+    static function applyThumbnail(&$item, $thumbnailId) {
 	list ($ret, $derivative) = GalleryCoreApi::fetchThumbnailsByItemIds(array($item->getId()));
 	if ($ret) {
 	    return $ret;
@@ -417,7 +417,7 @@ class ThumbnailHelper {
      * @return array GalleryStatus a status code
      *               array (string mime type => string list of extensions)
      */
-    function getMimeTypeMap() {
+    static function getMimeTypeMap() {
 	global $gallery;
 
 	$query = '

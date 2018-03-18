@@ -2057,7 +2057,7 @@ class HTTP_WebDAV_Server
      * @param string property value
      * @return array property array
      */
-    function mkprop()
+    static function mkprop()
     {
         $args = func_get_args();
 
@@ -2436,7 +2436,7 @@ class HTTP_WebDAV_Server
      *
      * @return resource a file descriptor
      */
-    function openRequestBody()
+    static function openRequestBody()
     {
         return fopen('php://input', 'rb');
     }

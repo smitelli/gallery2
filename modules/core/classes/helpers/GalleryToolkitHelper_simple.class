@@ -158,7 +158,7 @@ class GalleryToolkitHelper_simple {
     /**
      * @see GalleryCoreApi::getMaximumManagedToolkitPriority
      */
-    function getMaximumManagedPriority() {
+    static function getMaximumManagedPriority() {
 	global $gallery;
 
 	$query =
@@ -189,7 +189,7 @@ class GalleryToolkitHelper_simple {
     /**
      * @see GalleryCoreApi::getToolkitPriorityById
      */
-    function getToolkitPriorityById($toolkitId) {
+    static function getToolkitPriorityById($toolkitId) {
 	list ($ret, $searchResults) = GalleryCoreApi::getMapEntry(
 	    'GalleryToolkitOperationMimeTypeMap',
 	    array('priority'), array('toolkitId' => (string)$toolkitId));

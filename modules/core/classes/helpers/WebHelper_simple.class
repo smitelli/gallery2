@@ -190,7 +190,7 @@ class WebHelper_simple {
     /**
      * @see GalleryCoreApi::postToWebPage
      */
-    function postToWebPage($url, $postDataArray, $extraHeaders=array()) {
+    static function postToWebPage($url, $postDataArray, $extraHeaders=array()) {
 	$postDataRaw = WebHelper_simple::_encodePostData($postDataArray, $extraHeaders);
 
 	/* Read the web page into a buffer */
@@ -208,7 +208,7 @@ class WebHelper_simple {
      * @param array $extraHeaders extra headers to pass to the server
      * @return string the encoded post data
      */
-    function _encodePostData($postDataArray, &$extraHeaders) {
+    static function _encodePostData($postDataArray, &$extraHeaders) {
 	$postDataRaw = '';
 	foreach ($postDataArray as $key => $value) {
 	    if (!empty($postDataRaw)) {

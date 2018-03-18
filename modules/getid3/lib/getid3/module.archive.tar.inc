@@ -106,7 +106,7 @@ class getid3_tar {
 	}
 
 	// Parses the file mode to file permissions
-	function display_perms($mode) {
+	static function display_perms($mode) {
 		// Determine Type
 		if     ($mode & 0x1000) $type='p'; // FIFO pipe
 		elseif ($mode & 0x2000) $type='c'; // Character special
@@ -141,7 +141,7 @@ class getid3_tar {
 	}
 
 	// Converts the file type
-	function get_flag_type($typflag) {
+	static function get_flag_type($typflag) {
 		static $flag_types = array(
 			'0' => 'LF_NORMAL',
 			'1' => 'LF_LINK',

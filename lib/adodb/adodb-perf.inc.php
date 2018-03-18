@@ -235,7 +235,7 @@ class adodb_perf {
 	var $maxLength = 2000;
 	
     // Sets the tablename to be used            
-    function table($newtable = false)
+    static function table($newtable = false)
     {
         static $_table;
 

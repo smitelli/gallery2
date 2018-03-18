@@ -112,7 +112,7 @@ class GalleryPermissionHelper_advanced {
     /**
      * @see GalleryCoreApi::addEntityPermission
      */
-    function addEntityPermission($itemId, $entityId, $permission, $applyToChildren=false) {
+    static function addEntityPermission($itemId, $entityId, $permission, $applyToChildren=false) {
 	$ret = GalleryPermissionHelper_advanced::_changePermission(
 	    'add', $itemId, $entityId, $permission, $applyToChildren);
 	if ($ret) {
@@ -125,7 +125,7 @@ class GalleryPermissionHelper_advanced {
     /**
      * @see GalleryCoreApi::removeUserPermission
      */
-    function removeUserPermission($itemId, $userId, $permission, $applyToChildren=false) {
+    static function removeUserPermission($itemId, $userId, $permission, $applyToChildren=false) {
 	$ret = GalleryPermissionHelper_advanced::_changePermission(
 	    'remove', $itemId, $userId, $permission, $applyToChildren,
 	    array('userId' => (int)$userId, 'groupId' => null));
@@ -148,7 +148,7 @@ class GalleryPermissionHelper_advanced {
     /**
      * @see GalleryCoreApi::removeGroupPermission
      */
-    function removeGroupPermission($itemId, $groupId, $permission, $applyToChildren=false) {
+    static function removeGroupPermission($itemId, $groupId, $permission, $applyToChildren=false) {
 	$ret = GalleryPermissionHelper_advanced::_changePermission(
 	    'remove', $itemId, $groupId, $permission, $applyToChildren,
 	    array('userId' => null, 'groupId' => (int)$groupId));
@@ -168,7 +168,7 @@ class GalleryPermissionHelper_advanced {
     /**
      * @see GalleryCoreApi::removeEntityPermission
      */
-    function removeEntityPermission($itemId, $entityId, $permission, $applyToChildren=false) {
+    static function removeEntityPermission($itemId, $entityId, $permission, $applyToChildren=false) {
 	$ret = GalleryPermissionHelper_advanced::_changePermission(
 	    'remove', $itemId, $entityId, $permission, $applyToChildren);
 	if ($ret) {
@@ -441,7 +441,7 @@ class GalleryPermissionHelper_advanced {
     /**
      * @see GalleryCoreApi::removeItemPermissions
      */
-    function removeItemPermissions($itemId) {
+    static function removeItemPermissions($itemId) {
 	global $gallery;
 	if (empty($itemId) || !is_int($itemId)) {
 	    return GalleryCoreApi::error(ERROR_BAD_PARAMETER);
@@ -490,7 +490,7 @@ class GalleryPermissionHelper_advanced {
     /**
      * @see GalleryCoreApi::fetchAllPermissionsForItem
      */
-    function fetchAllPermissionsForItem($itemId, $compress=false) {
+    static function fetchAllPermissionsForItem($itemId, $compress=false) {
 	global $gallery;
 
 	if (empty($itemId)) {
@@ -587,7 +587,7 @@ class GalleryPermissionHelper_advanced {
     /**
      * @see GalleryCoreApi::fetchAccessListId
      */
-    function fetchAccessListId($itemId) {
+    static function fetchAccessListId($itemId) {
 	global $gallery;
 
 	if(empty($itemId)) {
@@ -650,7 +650,7 @@ class GalleryPermissionHelper_advanced {
     /**
      * @see GalleryCoreApi::copyPermissions
      */
-    function copyPermissions($toId, $fromId) {
+    static function copyPermissions($toId, $fromId) {
 	global $gallery;
 
 	if (empty($toId) || empty($fromId)) {
@@ -688,7 +688,7 @@ class GalleryPermissionHelper_advanced {
     /**
      * @see GalleryCoreApi::hasPermission
      */
-    function hasPermission($itemId, $entityIds, $permissions) {
+    static function hasPermission($itemId, $entityIds, $permissions) {
 	global $gallery;
 
 	if (empty($permissions) || empty($entityIds)) {
@@ -807,7 +807,7 @@ class GalleryPermissionHelper_advanced {
     /**
      * @see GalleryCoreApi::getPermissionIds
      */
-    function getPermissionIds($flags=0) {
+    static function getPermissionIds($flags=0) {
 	GalleryCoreApi::requireOnce(
 		'modules/core/classes/helpers/GalleryPermissionHelper_simple.class');
 	list ($ret, $allPermissions) = GalleryPermissionHelper_simple::_fetchAllPermissions();
@@ -828,7 +828,7 @@ class GalleryPermissionHelper_advanced {
     /**
      * @see GalleryCoreApi::getSubPermissions
      */
-    function getSubPermissions($permissionId) {
+    static function getSubPermissions($permissionId) {
 	list ($ret, $bits) =
 	    GalleryCoreApi::convertPermissionIdsToBits(array($permissionId));
 	if ($ret) {
@@ -846,7 +846,7 @@ class GalleryPermissionHelper_advanced {
     /**
      * @see GalleryCoreApi::unregisterModulePermissions
      */
-    function unregisterModulePermissions($moduleId) {
+    static function unregisterModulePermissions($moduleId) {
 	if (empty($moduleId)) {
 	    return GalleryCoreApi::error(ERROR_BAD_PARAMETER);
 	}
@@ -964,7 +964,7 @@ class GalleryPermissionHelper_advanced {
      * @param array $permissionIds permission ids
      * @return GalleryStatus a status code
      */
-    function _removePermissionsFromAllItems($permissionIds) {
+    static function _removePermissionsFromAllItems($permissionIds) {
 	global $gallery;
 
 	list ($ret, $removeBits) = GalleryCoreApi::convertPermissionIdsToBits($permissionIds);
@@ -1068,7 +1068,7 @@ class GalleryPermissionHelper_advanced {
     /**
      * @see GalleryCoreApi::maybeCompactAccessLists
      */
-    function maybeCompactAccessLists() {
+    static function maybeCompactAccessLists() {
 	/* We use a high tech genetic algorithm to make our decision */
 	if (rand(1, 100) <= 50) {
 	    $ret = GalleryPermissionHelper_advanced::compactAccessLists();
@@ -1082,7 +1082,7 @@ class GalleryPermissionHelper_advanced {
     /**
      * @see GalleryCoreApi::compactAccessLists
      */
-    function compactAccessLists() {
+    static function compactAccessLists() {
 	global $gallery;
 	$storage =& $gallery->getStorage();
 

@@ -46,7 +46,7 @@ class HiddenHelper extends HiddenInterface_1_0 {
      * @param int $passwordAncestor used in recursive calls
      * @return GalleryStatus a status code
      */
-    function hideItem(&$item, $useProgressBar=false,
+    static function hideItem(&$item, $useProgressBar=false,
 		      $hideId=null, $hiddenAncestor=null, $passwordAncestor=null) {
 	global $gallery;
 
@@ -233,7 +233,7 @@ class HiddenHelper extends HiddenInterface_1_0 {
      * @param int $passwordAncestor used in recursive calls
      * @return GalleryStatus a status code
      */
-    function unHideItem(&$item, $useProgressBar=false,
+    static function unHideItem(&$item, $useProgressBar=false,
 			$hideId=null, $hiddenAncestor=null, $passwordAncestor=null) {
 	global $gallery;
 	/* If given item is not hidden or subitem is hidden, we're done */
@@ -446,7 +446,7 @@ class HiddenHelper extends HiddenInterface_1_0 {
      *               mixed id of nearest password protected ancestor or false
      * @access private
      */
-    function _checkAncestors($item, $passwordInterface) {
+    static function _checkAncestors($item, $passwordInterface) {
 	list ($ret, $ancestors) = GalleryCoreApi::fetchParents($item);
 	if ($ret) {
 	    return array($ret, null, null);
@@ -475,7 +475,7 @@ class HiddenHelper extends HiddenInterface_1_0 {
      * @param GalleryItem $item item that has moved
      * @return GalleryStatus a status code
      */
-    function handleMoveItem($item) {
+    static function handleMoveItem($item) {
 	global $gallery;
 	$oldParentId = $item->getOriginalValue('parentId');
 	$newParentId = $item->getParentId();

@@ -2605,7 +2605,7 @@ class CoreModuleExtras {
      *                        'add' => array of string additions)
      * @access private
      */
-    function _prepareConfigUpgrade($currentVersion) {
+    static function _prepareConfigUpgrade($currentVersion) {
 	global $gallery;
 	$configChanges = array();
 
@@ -2941,7 +2941,7 @@ if (!isset($gallery) || !method_exists($gallery, \'setConfig\')) {
      * @param string $currentVersion current core version
      * @return boolean true if change is required
      */
-    function isConfigUpgradeRequired($currentVersion) {
+    static function isConfigUpgradeRequired($currentVersion) {
 	$configChanges = CoreModuleExtras::_prepareConfigUpgrade($currentVersion);
 	return !empty($configChanges);
     }
@@ -2952,7 +2952,7 @@ if (!isset($gallery) || !method_exists($gallery, \'setConfig\')) {
      * @param string $currentVersion current core version
      * @return GalleryStatus a status code
      */
-    function performConfigUpgrade($currentVersion) {
+    static function performConfigUpgrade($currentVersion) {
 	global $gallery;
 	$platform =& $gallery->getPlatform();
 
@@ -3440,7 +3440,7 @@ if (!isset($gallery) || !method_exists($gallery, \'setConfig\')) {
      *               bool true if any conversions took place
      * @access public
      */
-    function convertCharacterSetToUtf8($module, $statusMonitor) {
+    static function convertCharacterSetToUtf8($module, $statusMonitor) {
 	global $gallery;
 	$storage =& $gallery->getStorage();
 	$converted = false;

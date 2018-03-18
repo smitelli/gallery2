@@ -136,7 +136,7 @@ class MultisiteStep extends InstallStep {
 							: 'Multisite.html';
     }
 
-    function populateMultisiteDirectory($dir) {
+    static function populateMultisiteDirectory($dir) {
 	umask(0022);
 	$galleryDir = dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR;
 	if (!$out = @fopen("$dir/main.php", 'w')) {

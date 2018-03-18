@@ -379,7 +379,7 @@ class PluginCallbackView extends GalleryView {
      *               string a state
      * @static
      */
-    function getPluginState($type, $plugin, $status) {
+    static function getPluginState($type, $plugin, $status) {
 	if ($type == 'module' && $plugin->getId() == 'core') {
 	    return array(null, 'active');
 	}
