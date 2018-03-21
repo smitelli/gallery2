@@ -935,7 +935,7 @@ class GalleryPlatform {
 	    $gallery->debug("realpath($file)");
 	}
 
-	return realpath($file);
+	return @realpath($file);
     }
 
     /**
