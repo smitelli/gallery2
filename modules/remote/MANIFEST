@@ -7,11 +7,11 @@ modules/remote/RemoteSiteAdmin.inc	2760017490	1822786855	2619	2711
 modules/remote/applets/GalleryRemote.jar	3306380431	3306380431	712475	712475
 modules/remote/applets/img.jar	3083847189	3083847189	19215	19215
 modules/remote/applets/metadata-extractor-2.1.jar	674518813	674518813	69694	69694
-modules/remote/classes/GalleryRemoteConstants.class	3441717734	1480295982	2681	2764
-modules/remote/classes/GalleryRemoteProperties.class	3681535635	496594609	2967	3065
+modules/remote/classes/GalleryRemoteConstants.class	3613923450	1546774011	2695	2778
+modules/remote/classes/GalleryRemoteProperties.class	1386838987	3001032579	2955	3053
 modules/remote/images/rar_about_gr1.png	2906701870	2906701870	6720	6720
 modules/remote/images/rar_icon_32.gif	939897893	939897893	1718	1718
-modules/remote/module.inc	3923785600	4247013014	2508	2593
+modules/remote/module.inc	965192682	3552177279	2507	2592
 modules/remote/po/GNUmakefile	4182585338	210146087	97	101
 modules/remote/po/af.mo	1153164391	1153164391	918	918
 modules/remote/po/af.po	3991187113	719021252	2965	3048

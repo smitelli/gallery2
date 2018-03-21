@@ -3,13 +3,13 @@
 modules/publishxp/DownloadRegistryFile.inc	1213106015	3868950556	7028	7245
 modules/publishxp/ItemAddPublishXp.inc	3416259	3835410692	2075	2133
 modules/publishxp/Login.inc	1519400422	1248100089	1487	1527
-modules/publishxp/NewAlbum.inc	483591818	2580656640	5554	5721
+modules/publishxp/NewAlbum.inc	1224092506	561755735	5553	5720
 modules/publishxp/Options.inc	1072262051	3694766502	5047	5192
 modules/publishxp/PublishXpLogin.inc	4106641328	3092964443	4166	4301
 modules/publishxp/SelectAlbum.inc	3285480463	3371063961	5223	5383
 modules/publishxp/UploadItems.inc	1544193814	1497943183	9274	9569
 modules/publishxp/UploadedItem.inc	2583495757	333083209	1731	1774
-modules/publishxp/module.inc	1539177326	3261941828	2167	2227
+modules/publishxp/module.inc	1698591413	2381115308	2163	2223
 modules/publishxp/po/GNUmakefile	1866879166	2808215985	98	103
 modules/publishxp/po/af.mo	2335288335	2335288335	4408	4408
 modules/publishxp/po/af.po	2969266204	1327117341	7789	8036

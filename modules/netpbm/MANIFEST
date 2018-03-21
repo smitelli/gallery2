@@ -2,8 +2,8 @@
 # File crc32 crc32(crlf) size size(crlf)  or  R File
 modules/netpbm/AdminNetPbm.inc	1264622392	1559429669	7961	8241
 modules/netpbm/classes/NetPbmToolkit.class	866351573	539313645	23692	24512
-modules/netpbm/classes/NetPbmToolkitHelper.class	3029749630	3462436548	12023	12350
-modules/netpbm/module.inc	3963503974	11358601	8311	8610
+modules/netpbm/classes/NetPbmToolkitHelper.class	3367266882	4191354034	12051	12378
+modules/netpbm/module.inc	2143165447	1607516432	8310	8609
 modules/netpbm/po/GNUmakefile	1866879166	2808215985	98	103
 modules/netpbm/po/af.mo	903594214	903594214	5287	5287
 modules/netpbm/po/af.po	2740366313	2375354857	7449	7688

@@ -1,13 +1,13 @@
 # $Revision: 20955 $
 # File crc32 crc32(crlf) size size(crlf)  or  R File
 modules/captcha/CaptchaConfigAdmin.inc	1518418477	2827031607	2366	2440
-modules/captcha/CaptchaImage.inc	173624376	1405288179	3232	3329
-modules/captcha/CaptchaSiteAdmin.inc	1959376737	4008118265	6942	7169
-modules/captcha/classes/CaptchaHelper.class	4139677168	188642885	2286	2359
+modules/captcha/CaptchaImage.inc	3464559018	2324643028	3234	3331
+modules/captcha/CaptchaSiteAdmin.inc	3596252863	4238102087	6956	7183
+modules/captcha/classes/CaptchaHelper.class	370031005	393597140	2300	2373
 modules/captcha/classes/CaptchaValidationPlugin.inc	41035553	1747131645	5275	5447
 modules/captcha/classes/ResetFailureCountsTask.class	4064266251	2078000536	2248	2319
 modules/captcha/data/code_bg.jpg	1530281949	1530281949	6429	6429
-modules/captcha/module.inc	761479769	943274418	4540	4696
+modules/captcha/module.inc	1065868246	2895032174	4538	4694
 modules/captcha/po/GNUmakefile	1866879166	2808215985	98	103
 modules/captcha/po/af.mo	117556349	117556349	2446	2446
 modules/captcha/po/af.po	2401587452	466003364	4844	5003

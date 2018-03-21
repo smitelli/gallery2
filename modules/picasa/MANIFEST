@@ -2,12 +2,12 @@
 # File crc32 crc32(crlf) size size(crlf)  or  R File
 modules/picasa/ConfirmPicasaImport.inc	884805978	60970275	11367	11737
 modules/picasa/ImportResults.inc	3277981103	4086496798	2004	2067
-modules/picasa/ItemAddFromPicasa.inc	2427260600	3528975688	13227	13624
+modules/picasa/ItemAddFromPicasa.inc	1648164194	1410505302	13249	13646
 modules/picasa/SelectPicasaExportPath.inc	1793474855	2653725842	5006	5166
-modules/picasa/classes/Picasa2DataParser.class	991592716	3703217985	8234	8478
-modules/picasa/classes/PicasaImportHelper.class	3714528750	408835710	2558	2641
+modules/picasa/classes/Picasa2DataParser.class	1503473348	2804653631	8269	8513
+modules/picasa/classes/PicasaImportHelper.class	3599290127	1496594441	2572	2655
 modules/picasa/docs/README.TXT	1672042385	3644211501	1911	1963
-modules/picasa/module.inc	3479263201	4100135145	2057	2121
+modules/picasa/module.inc	1254935185	2409934587	2056	2120
 modules/picasa/po/GNUmakefile	1866879166	2808215985	98	103
 modules/picasa/po/af.mo	1767204335	1767204335	3854	3854
 modules/picasa/po/af.po	635951777	2802612728	7017	7281

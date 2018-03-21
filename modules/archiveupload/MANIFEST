@@ -1,10 +1,10 @@
 # $Revision: 20955 $
 # File crc32 crc32(crlf) size size(crlf)  or  R File
-modules/archiveupload/ArchiveUploadSiteAdmin.inc	869727641	3686887224	5443	5618
+modules/archiveupload/ArchiveUploadSiteAdmin.inc	2862363499	2432097305	5442	5617
 modules/archiveupload/classes/ArchiveExtractToolkit.class	3710093140	3596949609	4177	4304
-modules/archiveupload/classes/ArchiveUploadHelper.class	2279468028	1403341564	3919	4050
+modules/archiveupload/classes/ArchiveUploadHelper.class	2327820618	4275942501	3933	4064
 modules/archiveupload/data/test.zip	2308014917	2308014917	153	153
-modules/archiveupload/module.inc	3921169229	253272091	4535	4705
+modules/archiveupload/module.inc	4275535084	1253034646	4527	4697
 modules/archiveupload/po/GNUmakefile	1866879166	2808215985	98	103
 modules/archiveupload/po/af.mo	940895696	940895696	2733	2733
 modules/archiveupload/po/af.po	2744988806	3861446974	3853	3971

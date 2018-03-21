@@ -1,6 +1,6 @@
 # $Revision: 20955 $
 # File crc32 crc32(crlf) size size(crlf)  or  R File
-modules/digibug/AdminDigibug.inc	3587756289	3314864980	4802	4956
+modules/digibug/AdminDigibug.inc	1047369808	909792731	4801	4955
 modules/digibug/DigibugPrintPhotos.inc	3850054408	209928160	7070	7288
 modules/digibug/classes/DigibugCartPlugin.class	1273474793	254461801	2270	2340
 modules/digibug/digibug.css	3123972099	3421727331	2945	3123
@@ -11,7 +11,7 @@ modules/digibug/images/logo.png	2003570989	2003570989	17296	17296
 modules/digibug/images/save.png	3246612009	3246612009	9081	9081
 modules/digibug/images/small.png	3917680124	3917680124	12761	12761
 modules/digibug/images/top.png	871051679	871051679	8679	8679
-modules/digibug/module.inc	3104577641	743606202	5362	5557
+modules/digibug/module.inc	4262943118	2292227828	5374	5569
 modules/digibug/po/GNUmakefile	1866879166	2808215985	98	103
 modules/digibug/po/af.mo	2031271112	2031271112	833	833
 modules/digibug/po/af.po	361009838	757717167	3674	3813

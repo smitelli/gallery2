@@ -3,8 +3,8 @@
 modules/gd/AdminGd.inc	1839393820	627984154	4577	4739
 modules/gd/classes/GdFunctionality.class	3137665894	1769807398	18276	18964
 modules/gd/classes/GdToolkit.class	1804338512	4274252388	28078	29011
-modules/gd/classes/GdToolkitHelper.class	1019565822	1150994411	13314	13707
-modules/gd/module.inc	1298862327	438107398	5058	5251
+modules/gd/classes/GdToolkitHelper.class	1382538102	2376771700	13504	13902
+modules/gd/module.inc	278163259	1050455796	5061	5254
 modules/gd/po/GNUmakefile	1866879166	2808215985	98	103
 modules/gd/po/af.mo	2611249955	2611249955	3791	3791
 modules/gd/po/af.po	3046320973	1193583266	4744	4922
