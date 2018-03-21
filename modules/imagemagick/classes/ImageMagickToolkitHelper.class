@@ -398,7 +398,7 @@ class ImageMagickToolkitHelper {
 					 'message' => array_merge(
 					     array($module->translate('Problem executing binary:')),
 					     $results));
-		} else if (!preg_match('/(GIF.*PseudoClass|PseudoClass.*GIF|DirectClass.*GIF)/',
+		} else if (!preg_match('/GIF/',
 				 implode(',', $results))) {
 		    $testArray[] = array('name' => 'identify',
 					 'success' => false,
