@@ -107,7 +107,7 @@ modules/core/classes/GalleryMovieItem.class	2564217874	3914156002	8991	9320
 modules/core/classes/GalleryPersistent.class	3928222988	1391752876	4620	4771
 modules/core/classes/GalleryPhotoItem.class	3899330144	2034209454	7240	7510
 modules/core/classes/GalleryPhpVm.class	432939918	65762443	8559	8880
-modules/core/classes/GalleryPlatform.class	465263090	3805646269	38013	39300
+modules/core/classes/GalleryPlatform.class	3695459255	3530551240	38021	39308
 modules/core/classes/GalleryPlatform/UnixPlatform.class	241264498	152553845	4498	4670
 modules/core/classes/GalleryPlatform/WinNtPlatform.class	3993176411	595373471	5432	5637
 modules/core/classes/GalleryPlugin.class	3465636109	2190251849	19634	20285

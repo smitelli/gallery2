@@ -4,7 +4,7 @@ modules/jpegtran/AdminJpegtran.inc	866022697	3301282281	6709	6948
 modules/jpegtran/classes/JpegtranToolkit.class	3318151942	890416924	6159	6362
 modules/jpegtran/classes/JpegtranToolkitHelper.class	2700224055	148658349	6712	6900
 modules/jpegtran/data/test.jpg	3585624450	3585624450	763	763
-modules/jpegtran/module.inc	3524133870	2187507547	7706	7978
+modules/jpegtran/module.inc	4231079618	980508848	7731	8003
 modules/jpegtran/po/GNUmakefile	1866879166	2808215985	98	103
 modules/jpegtran/po/af.mo	1067756804	1067756804	1569	1569
 modules/jpegtran/po/af.po	3726772368	3807135183	4122	4280

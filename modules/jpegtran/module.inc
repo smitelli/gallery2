@@ -230,7 +230,7 @@ class JpegtranModule extends GalleryModule {
 	    $canRotate = false;
 	    foreach ($testResults as $testResult) {
 		/* Rotate is mandatory, the rest is optional */
-		if (isset($testResult['name']['rotate'])) {
+		if (isset($testResult['name']) && $testResult['name'] == 'rotate') {
 		    if ($testResult['success']) {
 			$canRotate = true;
 		    } else {

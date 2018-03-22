@@ -51,7 +51,7 @@ class GalleryPlatform {
 	    $gallery->debug("copy($source, $dest)");
 	}
 
-	if (is_uploaded_file($source)) {
+	if (@is_uploaded_file($source)) {
 	    $results = move_uploaded_file($source, $dest);
 	    if (!$results) {
 		return $results;
@@ -170,7 +170,7 @@ class GalleryPlatform {
 	    $gallery->debug("is_link($filename)");
 	}
 
-	return is_link($filename);
+	return @is_link($filename);
     }
 
     /**
@@ -184,7 +184,7 @@ class GalleryPlatform {
 	    $gallery->debug("is_dir($filename)");
 	}
 
-	return is_dir($filename);
+	return @is_dir($filename);
     }
 
     /**
@@ -198,7 +198,7 @@ class GalleryPlatform {
 	    $gallery->debug("is_file($filename)");
 	}
 
-	return is_file($filename);
+	return @is_file($filename);
     }
 
     /**
@@ -212,7 +212,7 @@ class GalleryPlatform {
 	    $gallery->debug("is_writeable($filename)");
 	}
 
-	return is_writeable($filename);
+	return @is_writeable($filename);
     }
 
     /**
@@ -226,7 +226,7 @@ class GalleryPlatform {
 	    $gallery->debug("is_readable($filename)");
 	}
 
-	return is_readable($filename);
+	return @is_readable($filename);
     }
 
     /**
@@ -240,7 +240,7 @@ class GalleryPlatform {
 	    $gallery->debug("is_uploaded_file($filename)");
 	}
 
-	return is_uploaded_file($filename);
+	return @is_uploaded_file($filename);
     }
 
     /**
@@ -254,7 +254,7 @@ class GalleryPlatform {
 	    $gallery->debug("is_executable($filename)");
 	}
 
-	return is_executable($filename);
+	return @is_executable($filename);
     }
 
     /**
