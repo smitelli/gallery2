@@ -187,7 +187,7 @@ class AlbumSelectCallbacks {
 		}
 
 		$dataToCache = array($treeList, $titles, $titlesForJs, $links);
-		GalleryDataCache::putToDisk($cachePathInfo, &$dataToCache);
+		GalleryDataCache::putToDisk($cachePathInfo, $dataToCache);
 	    }
 
 	    $translator =& $gallery->getTranslator();
