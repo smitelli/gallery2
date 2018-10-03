@@ -1,3 +1,4 @@
+/.fixers/*.pyc
 /config.php
 /favicon.ico
 /login.txt
