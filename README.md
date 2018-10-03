@@ -79,6 +79,26 @@ parser programs until they no longer caught any errors. Then I tried installing
 Gallery2 under php7-fpm and watched the error logs for new kinds of errors to
 make the parser programs catch. Lather, rinse, repeat.
 
+Is this really running somewhere?
+---------------------------------
+
+It most certainly is:
+[https://gallery.scottsmitelli.com](https://gallery.scottsmitelli.com/)
+
+As of this writing, the system information output is:
+
+    ...
+    PHP version = 7.0.30-0+deb9u1 fpm-fcgi
+    Webserver = nginx/1.10.3
+    Database = mysqli 5.5.5-10.1.26-MariaDB-0+deb9u1, lock.system=flock
+    Toolkits = Thumbnail, Gd, ImageMagick, NetPBM, SquareThumb, Ffmpeg
+    Acceleration = partial/3600, none/0
+    Operating system = Linux [...] 4.17.17-x86_64-linode116 #1 SMP PREEMPT Mon Aug 20 16:07:40 UTC 2018 x86_64
+    Default theme = matrix
+    gettext = enabled
+    Locale = en_US
+    ...
+
 License
 -------
 
