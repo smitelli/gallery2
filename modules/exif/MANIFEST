@@ -14,7 +14,7 @@ modules/exif/classes/GalleryStorage/schema.tpl	2077851286	3261133679	2819	2918
 modules/exif/classes/Maps.inc	198338354	3197329325	366	370
 modules/exif/classes/Maps.xml	1215849070	3620169907	798	827
 modules/exif/lib/JPEG/JPEG.inc	14795072	1698894289	106553	109557
-modules/exif/lib/exifer/exif.inc	3529905196	1505399037	40002	40975
+modules/exif/lib/exifer/exif.inc	1760585411	717052268	40003	40976
 modules/exif/lib/exifer/makers/canon.inc	301969404	204841848	19534	19959
 modules/exif/lib/exifer/makers/fujifilm.inc	2586206162	1376328960	8602	8859
 modules/exif/lib/exifer/makers/gps.inc	1097818819	1073991836	8897	9130

@@ -115,7 +115,7 @@ modules/core/classes/GalleryRenderer.class	1412387800	3771677370	2295	2356
 modules/core/classes/GalleryRepository.class	3505394447	1453652168	36832	37931
 modules/core/classes/GalleryRepositoryIndex.class	4200675161	1400042912	20563	21171
 modules/core/classes/GalleryRepositoryUtilities.class	2804315000	3997792799	25727	26464
-modules/core/classes/GallerySession.class	2211340764	1976954339	48641	50136
+modules/core/classes/GallerySession.class	8642159	3462656049	48730	50226
 modules/core/classes/GallerySmarty.class	63474831	505828339	2472	2552
 modules/core/classes/GallerySortInterface_1_2.class	261710614	1740405744	4777	4904
 modules/core/classes/GalleryStatus.class	181760524	1378675040	6698	6944
