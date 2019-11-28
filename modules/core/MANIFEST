@@ -89,7 +89,7 @@ modules/core/classes/GalleryConstants.class	1421923304	2219288355	8392	8792
 modules/core/classes/GalleryController.class	2306510619	2561243098	10471	10764
 modules/core/classes/GalleryCoreApi.class	3327516512	2217196466	136054	139369
 modules/core/classes/GalleryCoreSearch.class	3656293068	2641358151	6281	6480
-modules/core/classes/GalleryDataCache.class	1139534327	2555429162	24887	25748
+modules/core/classes/GalleryDataCache.class	630033615	881839576	24898	25759
 modules/core/classes/GalleryDataItem.class	3263102417	4056139694	11202	11620
 modules/core/classes/GalleryDerivative.class	2349719406	1249385750	22137	22895
 modules/core/classes/GalleryDerivativeImage.class	4285099222	2378843015	6670	6920
