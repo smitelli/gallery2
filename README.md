@@ -1,14 +1,14 @@
 Gallery2
 ========
 
-The very unofficial PHP 7 fork.
+The very unofficial PHP 7.3 fork.
 
 by [Scott Smitelli](mailto:scott@smitelli.com) and the original Gallery2
 authors.
 
 This is a copy of the Gallery 2.3.2 (full) source code as it was released on
 SourceForge in April 2012. It has been updated to install and run without major
-errors under PHP 7.
+errors under PHP 7.3.
 
 I have not bumped the version number, because fundamentally this is not my
 project and it seems like a whole lot of effort to do.
@@ -16,7 +16,7 @@ project and it seems like a whole lot of effort to do.
 What should I expect?
 ---------------------
 
-This code should install and run under PHP 7 without error. It should get all
+This code should install and run under PHP 7.3 without error. It should get all
 the way through the installer, even with all optional modules selected, without
 sending a single notice to the error log. It should be possible to add albums
 and items, resize images, and access all pages of the admin area without error.
@@ -76,7 +76,7 @@ I wrote a series of Python programs that parsed the PHP class/method structure
 across all the source files and reported on things that were defined/called
 incorrectly. I edited the offending source files and continued running the
 parser programs until they no longer caught any errors. Then I tried installing
-Gallery2 under php7-fpm and watched the error logs for new kinds of errors to
+Gallery2 under php-fpm and watched the error logs for new kinds of errors to
 make the parser programs catch. Lather, rinse, repeat.
 
 Is this really running somewhere?
@@ -88,12 +88,12 @@ It most certainly is:
 As of this writing, the system information output is:
 
     ...
-    PHP version = 7.0.30-0+deb9u1 fpm-fcgi
-    Webserver = nginx/1.10.3
-    Database = mysqli 5.5.5-10.1.26-MariaDB-0+deb9u1, lock.system=flock
-    Toolkits = Thumbnail, Gd, ImageMagick, NetPBM, SquareThumb, Ffmpeg
-    Acceleration = partial/3600, none/0
-    Operating system = Linux [...] 4.17.17-x86_64-linode116 #1 SMP PREEMPT Mon Aug 20 16:07:40 UTC 2018 x86_64
+    PHP version = 7.3.11-1~deb10u1 fpm-fcgi
+    Webserver = nginx/1.14.2
+    Database = mysqli 5.5.5-10.3.18-MariaDB-0+deb10u1, lock.system=flock
+    Toolkits = Thumbnail, Gd, ImageMagick, NetPBM, SquareThumb, Ffmpeg, Exif, Dcraw, jpegtran
+    Acceleration = none/900, none/0
+    Operating system = Linux [...] 5.3.11-x86_64-linode131 #1 SMP PREEMPT Wed Nov 13 18:51:32 UTC 2019 x86_64
     Default theme = matrix
     gettext = enabled
     Locale = en_US
